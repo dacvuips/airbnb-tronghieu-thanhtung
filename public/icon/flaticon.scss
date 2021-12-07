@@ -1,0 +1,73 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?9a0dde8895ea80e1f158d05ae9a46f54") format("truetype"),
+url("./flaticon.woff?9a0dde8895ea80e1f158d05ae9a46f54") format("woff"),
+url("./flaticon.woff2?9a0dde8895ea80e1f158d05ae9a46f54") format("woff2"),
+url("./flaticon.eot?9a0dde8895ea80e1f158d05ae9a46f54#iefix") format("embedded-opentype"),
+url("./flaticon.svg?9a0dde8895ea80e1f158d05ae9a46f54#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "home": "\f101",
+    "television": "\f102",
+    "play-button": "\f103",
+    "info": "\f104",
+    "play": "\f105",
+    "search": "\f106",
+    "user": "\f107",
+    "volume-up-indicator": "\f108",
+    "reload": "\f109",
+    "plus": "\f10a",
+    "send": "\f10b",
+    "message": "\f10c",
+);
+
+.flaticon-home:before {
+    content: map-get($flaticon-map, "home");
+}
+.flaticon-television:before {
+    content: map-get($flaticon-map, "television");
+}
+.flaticon-play-button:before {
+    content: map-get($flaticon-map, "play-button");
+}
+.flaticon-info:before {
+    content: map-get($flaticon-map, "info");
+}
+.flaticon-play:before {
+    content: map-get($flaticon-map, "play");
+}
+.flaticon-search:before {
+    content: map-get($flaticon-map, "search");
+}
+.flaticon-user:before {
+    content: map-get($flaticon-map, "user");
+}
+.flaticon-volume-up-indicator:before {
+    content: map-get($flaticon-map, "volume-up-indicator");
+}
+.flaticon-reload:before {
+    content: map-get($flaticon-map, "reload");
+}
+.flaticon-plus:before {
+    content: map-get($flaticon-map, "plus");
+}
+.flaticon-send:before {
+    content: map-get($flaticon-map, "send");
+}
+.flaticon-message:before {
+    content: map-get($flaticon-map, "message");
+}
