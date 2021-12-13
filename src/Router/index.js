@@ -1,5 +1,7 @@
 // import Login from "pages/Login/Login";
 // import Register from "pages/Register/Register";
+import Login from "pages/Login/Login";
+import Register from "pages/Register/Register";
 import AdminTemplate from "templates/AdminTemplate";
 import Dashboard from "templates/AdminTemplate/Dashboard";
 import LocalInfoManager from "templates/AdminTemplate/LocalInfoManager";
@@ -26,39 +28,39 @@ const routesAdmin = [
   //localhost:3000/dashboard
   {
     exact: false,
-    path: "/dashboard",
+    path: "/admin/dashboard",
     component: Dashboard,
   },
   {
     exact: false,
-    path: "/usermanager",
+    path: "/admin/usermanager",
     component: UserManager,
   },
   {
     exact: false,
-    path: "/local",
+    path: "/admin/local",
     component: LocalInfoManager,
   },
   {
     exact: false,
-    path: "/room",
+    path: "/admin/room",
     component: RoomInfoManager,
   },
 ];
 
-// const checkOut = [
-//   //localhost:3000/dashboard
-//   {
-//     exact: false,
-//     path: "/register",
-//     component: Register,
-//   },
-//   {
-//     exact: false,
-//     path: "/login",
-//     component: Login,
-//   },
-// ];
+const checkOut = [
+  //localhost:3000/dashboard
+  {
+    exact: false,
+    path: "/register",
+    component: Register,
+  },
+  {
+    exact: false,
+    path: "/login",
+    component: Login,
+  },
+];
 
 function renderRoutesHome() {
   return routesHome.map((route, index) => {
