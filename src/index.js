@@ -9,18 +9,12 @@ import "jquery/dist/jquery.min.js";
 import "popper.js/dist/umd/popper.min.js";
 import "bootstrap/dist/js/bootstrap.min.js";
 
-import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
-import rootReducer from "./redux/reducers";
-import thunk from "redux-thunk";
+import { store } from "redux/configStore";
+// import rootReducer from "./redux/reducers";
+
 import { BrowserRouter } from "react-router-dom";
-
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-const store = createStore(
-  rootReducer,
-  composeEnhancers(applyMiddleware(thunk))
-);
+import "antd/dist/antd.css";
 
 ReactDOM.render(
   <Provider store={store}>
