@@ -10,4 +10,10 @@
             height: 100%;
         }
     }
+
+    &-right{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }

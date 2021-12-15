@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import api from './../../../utils/apiUtils'
 import logo from './../../../assets/logo.png'
+import {AccountCircle , Dehaze , FilterTiltShift} from '@mui/icons-material'
 
 const Navbar = () => {
     useEffect(() => {
@@ -21,10 +22,17 @@ const Navbar = () => {
                 <img src={logo} alt="logo" />
             </div>
             <div className="navbar-menu">
-                Menu
+                <span>Nơi ở</span>
+                <span>Trải nghiệm</span>
+                <span>Trải nghiệm trực tuyén</span>
             </div>
             <div className="navbar-right">
-                Right
+                <span>Trở thành chủ nhà</span>
+                <FilterTiltShift />
+                <div className="navbar-right-login">
+                    <Dehaze />
+                    <AccountCircle />
+                </div>
             </div>
         </div>
     )
