@@ -6,7 +6,6 @@ import Register from "pages/Register/Register";
 import { Route, Router, Switch } from "react-router";
 import { renderRoutesAdmin, renderRoutesHome } from "Router";
 import { HomeTemplate } from "templates/HomeTemplate/HomeTemplate";
-import "./App.scss";
 
 export const history = createBrowserHistory();
 function App() {

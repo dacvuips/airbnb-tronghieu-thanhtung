@@ -8,7 +8,7 @@ const api = axios.create({
 api.interceptors.request.use((config) => {
     config.headers = {
         ...config.headers,
-        tokenCybersoft: TOKEN_CYBERSOFT,
+        tokenByClass: TOKEN_CYBERSOFT,
         Authorization: localStorage.getItem('User') ? 'Bearer ' + JSON.parse(localStorage.getItem('User')).accessToken : ''
     }
     return config
@@ -18,3 +18,4 @@ api.interceptors.request.use((config) => {
     }
 )
 
+export default api
