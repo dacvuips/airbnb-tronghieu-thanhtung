@@ -6,11 +6,11 @@ import logo from './../../../assets/logo.png'
 const Navbar = () => {
     useEffect(() => {
         async function fetchData() {
-            api.get("/api/locations").then(
-                (resul) => {
-                    console.log(resul)
+            api.get("api/users/pagination").then(
+                (result) => {
+                    console.log(result)
                 }
-            ).catch()// anh luuw file lại giúp e với
+            ).catch()
             
         }
         fetchData()
@@ -30,4 +30,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar// a dang di lam ma
+export default Navbar

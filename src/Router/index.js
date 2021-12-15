@@ -1,5 +1,3 @@
-// import Login from "pages/Login/Login";
-// import Register from "pages/Register/Register";
 import Login from "pages/Login/Login";
 import Register from "pages/Register/Register";
 import AdminTemplate from "templates/AdminTemplate";
@@ -14,14 +12,9 @@ const routesHome = [
   {
     exact: true,
     path: "/",
-    component: HomeTemplate,
-  },
-
-  {
-    exact: false,
-    path: "/home",
     component: Home,
   },
+
 ];
 
 const routesAdmin = [

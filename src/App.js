@@ -1,11 +1,7 @@
 import { createBrowserHistory } from "history";
-import Home from "pages/Home/Home";
-import Login from "pages/Login/Login";
 import PageNotFound from "pages/PageNotFound";
-import Register from "pages/Register/Register";
 import { Route, Router, Switch } from "react-router";
 import { renderRoutesAdmin, renderRoutesHome } from "Router";
-import { HomeTemplate } from "templates/HomeTemplate/HomeTemplate";
 
 export const history = createBrowserHistory();
 function App() {
