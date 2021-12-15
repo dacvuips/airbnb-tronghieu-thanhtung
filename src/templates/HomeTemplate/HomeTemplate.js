@@ -1,6 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import Navbar from "./_component/Navbar";
+import Navbar from "./components/Navbar";
 
 function LayoutHome(props) {
   return (
