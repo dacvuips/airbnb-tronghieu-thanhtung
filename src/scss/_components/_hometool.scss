@@ -3,14 +3,33 @@
     height: 70px;
     background-color: #ccc;
     border-radius: 40px;
-    padding: 0 25px;
+    margin: auto;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    &-left{
+        input {
+            border: none;
+            outline: none;
+        }
+
+    }
     &-mid{
         display: flex;
         align-items: center;
         justify-content: space-between;
+    }
+
+    &-text{
+        display: block;
+        font-weight: bold;
+    }
+    &-line{
+        border-right: 1px solid #000;
+        padding-right: auto;
+        &:last-child{
+            border-right: none;
+        }
     }
 }
