@@ -2,6 +2,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 80px;
+    background-color: #000;
+    color: #fff;
     &-logo{
         width: 100px;
         height: 60px;
@@ -11,9 +14,48 @@
         }
     }
 
+    &-menu{
+        cursor: pointer;
+        span{
+            position: relative;
+            margin-right: 20px;
+            &:hover{
+                opacity: 0.5;
+            }
+        }
+        .active::after{
+            content: '';
+            width: 14px;
+            height: 3px;
+            background-color: red;
+            position: absolute;
+            margin-right: auto;
+            left: 0;
+            bottom: -6px;
+        }
+    }
+
     &-right{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        cursor: pointer;
+        span{
+            margin-right: 20px;
+            &:hover{
+                opacity: 0.5;
+            }
+        }
+        &-login{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 80px;
+            height: 30px;
+            margin-left: 20px;
+            color: #000;
+            background-color: #ccc;
+            border-radius: 20px;
+        }
     }
 }
