@@ -1,13 +1,16 @@
 .hometool{
     width: 850px;
     height: 70px;
-    background-color: #ccc;
+    background-color: #fff;
+    color: #000;
     border-radius: 40px;
     margin: auto;
 
     display: flex;
     align-items: center;
     justify-content: space-around;
+    
+
     &-left{
         input {
             border: none;
@@ -21,6 +24,7 @@
         justify-content: space-between;
     }
 
+   
     &-text{
         display: block;
         font-weight: bold;

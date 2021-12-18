@@ -27,6 +27,7 @@ const Navbar = () => {
                 <span>Trải nghiệm</span>
                 <span>Trải nghiệm trực tuyén</span>
             </div>
+            
             <div className="navbar-right">
                 <span>Trở thành chủ nhà</span>
                 <FilterTiltShift />
