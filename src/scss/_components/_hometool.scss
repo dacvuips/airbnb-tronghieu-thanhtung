@@ -10,11 +10,16 @@
     align-items: center;
     justify-content: space-around;
     
-
+    cursor: pointer;
     &-left{
+        position: relative;
         input {
             border: none;
             outline: none;
+        }
+        &:hover{
+            
+            background-color: #ccc;
         }
 
     }
@@ -22,18 +27,49 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        &-from{
+            padding-left: 30px;
+            &:hover{
+                background-color: #ccc;
+            }
+        }
+        &-to{
+            &:hover{
+                background-color: #ccc;
+            }
+        }
+
     }
 
-   
+    &-right{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &-text{
+            margin-right: 50px;
+        }
+        &-icon{
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 50%;
+
+            background-color: #de3f76;
+            color: #fff;
+        }
+    }
+
     &-text{
         display: block;
         font-weight: bold;
     }
     &-line{
         border-right: 1px solid #000;
-        padding-right: auto;
+        padding-right: 70px;
         &:last-child{
             border-right: none;
+            padding-right: 0;
         }
     }
 }

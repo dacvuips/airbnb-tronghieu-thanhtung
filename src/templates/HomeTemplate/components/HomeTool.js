@@ -1,5 +1,7 @@
 import { Search } from '@mui/icons-material'
 import React from 'react'
+import Location from './Modal/Location'
+
 
 const HomeTool = () => {
     return (
@@ -7,6 +9,7 @@ const HomeTool = () => {
             <div className="hometool-left hometool-line">
                 <span className='hometool-text'>Địa điểm</span>
                 <input type="text" placeholder='Bạn sắp đi đâu?'/>
+                <Location/>
             </div>
             <div className="hometool-mid hometool-line">
                 <div className="hometool-mid-to hometool-line">
@@ -19,9 +22,13 @@ const HomeTool = () => {
                 </div>
             </div>
             <div className="hometool-right hometool-line">
-                <spa className='hometool-text'n>Khách</spa>
-                <span>Thêm Khách</span>
-                <Search /> 
+                <div className="hometool-right-text">
+                    <span className='hometool-text'n>Khách</span>
+                    <span>Thêm Khách</span>
+                </div>
+                <div className="hometool-right-icon">
+                    <Search />
+                </div>
             </div>
         </div>
     )

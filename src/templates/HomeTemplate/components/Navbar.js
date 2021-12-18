@@ -8,9 +8,9 @@ import {AccountCircle , Dehaze , FilterTiltShift} from '@mui/icons-material'
 const Navbar = () => {
     useEffect(() => {
         async function fetchData() {
-            api.get("api/users/pagination").then(
+            api.get("/api/locations").then(
                 (result) => {
-                    console.log(result)
+                    console.log(result.data)
                 }
             ).catch()
             
@@ -19,7 +19,7 @@ const Navbar = () => {
     },[])
     return (
         <div className='navbar'>
-            <Link className="navbar-logo">
+            <Link className="navbar-logo" href='/'>
                 <img src={logo} alt="logo" />
             </Link>
             <div className="navbar-menu">
