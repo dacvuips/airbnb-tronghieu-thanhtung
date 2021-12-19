@@ -1,16 +1,29 @@
 import { Search } from '@mui/icons-material'
-import React from 'react'
+import React, { useRef,useEffect } from 'react'
+import { useState } from 'react'
 import Location from './Modal/Location'
 
 
 const HomeTool = () => {
+
+    const [isPlace,setIsPlace] = useState(false);
+    useEffect(() => {
+        window.addEventListener("click",() => {
+            if(isPlace) {
+                setIsPlace(false);
+            }
+        })
+    }, [])
     return (
         <div className='hometool'>
-            <div className="hometool-left hometool-line">
+            <div className="hometool-left hometool-line" onClick={(e) => {
+                e.stopPropagation();
+                setIsPlace(true);
+            }}>
                 <span className='hometool-text'>Địa điểm</span>
                 <input type="text" placeholder='Bạn sắp đi đâu?'/>
-                <Location/>
             </div>
+            <Location isPlace={isPlace}/>
             <div className="hometool-mid hometool-line">
                 <div className="hometool-mid-to hometool-line">
                     <span className='hometool-text hometool-mid-to-text'>Nhận phòng</span>

@@ -1,10 +1,26 @@
 .location{
     width: 500px;
-    height: 160px;
     background-color: #fff;
     position: absolute;
-    top: 70px;
-    left: -20px;
+    top: 82px;
+    left: 0;
     border-radius: 40px;
     z-index: 99;
+    padding: 35px;
+    
+    button{
+        border: 1px solid #ccc;
+        padding: 10px 20px;
+        border-radius: 20px;
+        background-color: #fff;
+        span{
+            margin-right: 200px;
+            font-size: 18px;
+            color: #8a0192;
+        }
+        .icon{
+            font-size: 30px;
+            color: #8a0192; 
+        }
+    }
 }
