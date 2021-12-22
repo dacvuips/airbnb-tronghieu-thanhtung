@@ -8,12 +8,18 @@
     z-index: 99;
     padding: 35px;
     
+    &-search{
+        display: block;
+        text-decoration: none;
+        color: #000;
+    }
+
     button{
         border: 1px solid #ccc;
         padding: 10px 20px;
         border-radius: 20px;
         background-color: #fff;
-        span{
+        a{
             margin-right: 200px;
             font-size: 18px;
             color: #8a0192;

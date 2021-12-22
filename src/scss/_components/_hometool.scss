@@ -13,13 +13,11 @@
     cursor: pointer;
     
     &-left{
-        
         input {
             border: none;
             outline: none;
         }
-        &:hover{
-            
+        &:hover input{
             background-color: #ccc;
         }
     }

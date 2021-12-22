@@ -5,8 +5,10 @@ import Dashboard from "templates/AdminTemplate/Dashboard";
 import LocalInfoManager from "templates/AdminTemplate/LocalInfoManager";
 import RoomInfoManager from "templates/AdminTemplate/RoomInfoManager";
 import UserManager from "templates/AdminTemplate/UserManager";
+import DetailProduct from "templates/HomeTemplate/DetailProduct";
 import Home from "templates/HomeTemplate/Home";
 import HomeTemplate from "templates/HomeTemplate/HomeTemplate";
+import Products from "templates/HomeTemplate/Products";
 
 const routesHome = [
   {
@@ -14,6 +16,16 @@ const routesHome = [
     path: "/",
     component: Home,
   },
+  {
+    exact: false,
+    path: "/products",
+    component: Products,
+  },
+  {
+    exact: false,
+    path: "/product-detail/:id",
+    component: DetailProduct,
+  }
 
 ];
 
