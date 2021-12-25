@@ -17,9 +17,6 @@
             border: none;
             outline: none;
         }
-        &:hover input{
-            background-color: #ccc;
-        }
     }
     &-mid{
         display: flex;
@@ -27,16 +24,7 @@
         justify-content: space-between;
         &-from{
             padding-left: 30px;
-            &:hover{
-                background-color: #ccc;
-            }
         }
-        &-to{
-            &:hover{
-                background-color: #ccc;
-            }
-        }
-
     }
 
     &-right{

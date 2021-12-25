@@ -5,10 +5,13 @@ import Dashboard from "templates/AdminTemplate/Dashboard";
 import LocalInfoManager from "templates/AdminTemplate/LocalInfoManager";
 import RoomInfoManager from "templates/AdminTemplate/RoomInfoManager";
 import UserManager from "templates/AdminTemplate/UserManager";
+import Footer from "templates/HomeTemplate/components/Footer";
 import DetailProduct from "templates/HomeTemplate/DetailProduct";
 import Home from "templates/HomeTemplate/Home";
 import HomeTemplate from "templates/HomeTemplate/HomeTemplate";
+import Postcards from "templates/HomeTemplate/Postcards";
 import Products from "templates/HomeTemplate/Products";
+
 
 const routesHome = [
   {
@@ -25,7 +28,18 @@ const routesHome = [
     exact: false,
     path: "/product-detail/:id",
     component: DetailProduct,
-  }
+  },
+  {
+    exact: false,
+    path: "/products",
+    component: Postcards,
+  },
+  {
+    exact: false,
+    path: "/footer",
+    component: Footer,
+  },
+
 
 ];
 

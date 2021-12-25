@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { useEffect , useState } from 'react'
 import {ChevronRight} from '@mui/icons-material'
 import { Link } from 'react-router-dom'
+import api from 'utils/apiUtils'
 
-const Location = ({valueSearch , isPlace , location}) => {
+const Location = ({valueSearch , isPlace}) => {
+    const [location, setLocation] = useState([])
+
+    useEffect(() => {
+        async function fetchData () {
+            api.get("/api/locations")
+            .then((result) => {
+                setLocation(result.data)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+        }
+        fetchData()
+    }, [])
 
     let listSearch = location ? [...location] : []
     if (valueSearch && location) {

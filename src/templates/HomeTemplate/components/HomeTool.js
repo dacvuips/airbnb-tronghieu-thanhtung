@@ -1,27 +1,13 @@
 import { Search } from '@mui/icons-material'
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import api from 'utils/apiUtils'
 import Location from './Modal/Location'
 
 
 const HomeTool = () => {
-    const [location, setLocation] = useState([])
+    
     const [isPlace,setIsPlace] = useState(false);
     const [valueSearch , setValueSearch] = useState('')
-
-    useEffect(() => {
-        async function fetchData () {
-            api.get("/api/locations")
-            .then((result) => {
-                setLocation(result.data)
-            })
-            .catch((error) => {
-                console.log(error)
-            })
-        }
-        fetchData()
-    }, [])
 
     useEffect(() => {
         window.addEventListener("click",() => {
@@ -44,7 +30,7 @@ const HomeTool = () => {
                     onChange={(e) => setValueSearch(e.target.value)} 
                 />
             </div>
-            <Location isPlace={isPlace} valueSearch={valueSearch} location={location}/>
+            <Location isPlace={isPlace} valueSearch={valueSearch}/>
             <div className="hometool-mid hometool-line">
                 <div className="hometool-mid-to hometool-line">
                     <span className='hometool-text hometool-mid-to-text'>Nhận phòng</span>

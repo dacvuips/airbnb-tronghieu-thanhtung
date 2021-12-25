@@ -1,13 +1,15 @@
 import React from "react";
 import { Route } from "react-router-dom";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
 function LayoutHome(props) {
   return (
-    <>
+    <div style={{width: "1600px", margin: "auto"}}>
       <Navbar />
       {props.children}
-    </>
+      <Footer />
+    </div>
   );
 }
 

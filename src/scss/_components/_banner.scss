@@ -2,14 +2,13 @@
     background-color: #000;
     margin-top: 30px;
     padding-bottom: 70px;
+    position: relative;
     img{
         width: 1600px;
         height: 700px;
         display: flex;
         margin: auto;
-        border-radius: 20px;
-
-        position: relative;
+        border-radius: 20px; 
     }
     &-text{
         position: absolute;
