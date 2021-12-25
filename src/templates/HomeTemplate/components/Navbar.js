@@ -19,6 +19,7 @@ const Navbar = () => {
             window.removeEventListener('scroll')
         }
     }, [])
+    
     return (
         <div className='navbar' ref={navBarRef}>
             <Link className="navbar-logo" to='/'>
