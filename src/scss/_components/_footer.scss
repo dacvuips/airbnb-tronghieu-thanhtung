@@ -1,3 +1,47 @@
 .footer{
     background-color: #f7f7f7;
+    
+    &-top{
+        border-bottom: 1px solid #ccc;
+        padding: 40px 0;
+        &-header{
+            font-weight: bold;
+        }
+        a{
+            margin-bottom: 10px;
+            display: block;
+            color: #000;
+        }
+    }
+    &-bottom{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0 ;
+        &-left{
+            position: relative;
+            a{
+                text-decoration: none;
+                color: #000;
+                margin-left: 20px;
+            }
+
+            &-icon::before{
+                content: '';
+                width: 3px;
+                height: 3px;
+                border-radius: 50%;
+                background-color: #000;
+                position: absolute;
+                transform: translateX(-12px) translateY(10px);
+
+            }
+        }
+        &-right{
+            &-icon{
+                margin-left: 20px;
+                cursor: pointer;
+            }
+        }
+    }
 }

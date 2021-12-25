@@ -1,12 +1,26 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import logo from './../../../assets/logo.png'
 import {AccountCircle , Dehaze , FilterTiltShift} from '@mui/icons-material'
+import { useEffect } from 'react'
 
 const Navbar = () => {
+    const navBarRef = useRef(null)
 
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80){
+                navBarRef.current.classList.add('shrink')
+            }else {
+                navBarRef.current.classList.remove('shrink')
+            }
+        })
+        return () => {
+            window.removeEventListener('scroll')
+        }
+    }, [])
     return (
-        <div className='navbar'>
+        <div className='navbar' ref={navBarRef}>
             <Link className="navbar-logo" to='/'>
                 <img src={logo} alt="logo" />
             </Link>

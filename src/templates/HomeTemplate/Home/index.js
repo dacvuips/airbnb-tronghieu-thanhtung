@@ -5,10 +5,12 @@ import Postcards from "../Postcards"
 
 export default function Home() {
     return ( 
-        <div style={{backgroundColor: 'black', height: '100px'}}>
-            <HomeTool /> 
-            <Banner/>
+        <>
+            <div style={{backgroundColor: 'black'}}>
+                <HomeTool /> 
+                <Banner/>
+            </div>
             <Postcards />
-        </div>
+        </>
     )
 }
