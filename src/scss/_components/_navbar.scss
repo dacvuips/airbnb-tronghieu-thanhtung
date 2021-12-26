@@ -36,11 +36,13 @@
 
     &-menu{
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        position: relative;
         a{
             position: relative;
             margin-right: 20px;
             color: #fff;
-            transition: none;
             &:hover{
                 color: #fff;
                 opacity: 0.5;

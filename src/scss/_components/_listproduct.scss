@@ -1,0 +1,24 @@
+.product{
+    margin-top: 100px;
+    &-item{
+        padding-bottom: 20px;
+        img{
+            width: 250px;
+            height: 200px;
+            border-radius: 20px;
+        }
+    }
+    a{
+        color: #000;
+        p{
+            margin-bottom: 0px;
+        }
+
+    }
+
+    &-location{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

@@ -10,7 +10,7 @@ import DetailProduct from "templates/HomeTemplate/DetailProduct";
 import Home from "templates/HomeTemplate/Home";
 import HomeTemplate from "templates/HomeTemplate/HomeTemplate";
 import Postcards from "templates/HomeTemplate/Postcards";
-import Products from "templates/HomeTemplate/Products";
+import ListProducts from "templates/HomeTemplate/ListProducts";
 
 
 const routesHome = [
@@ -22,7 +22,7 @@ const routesHome = [
   {
     exact: false,
     path: "/products",
-    component: Products,
+    component: ListProducts,
   },
   {
     exact: false,
