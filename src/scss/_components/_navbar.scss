@@ -21,6 +21,10 @@
         z-index: 100;
         a{
             color: #000;
+            &:hover{
+                color: #000;
+                opacity: 0.5;
+            }
         }
     }
 
