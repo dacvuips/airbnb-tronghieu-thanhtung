@@ -17,6 +17,7 @@
         background-color: #fff;
         height: 80px;
         color: #000;
+        position: fixed;
         z-index: 100;
         a{
             color: #000;
@@ -35,14 +36,9 @@
 
     &-menu{
         cursor: pointer;
-        span{
+        a{
             position: relative;
             margin-right: 20px;
-            &:hover{
-                opacity: 0.5;
-            }
-        }
-        a{
             color: #fff;
             transition: none;
             &:hover{

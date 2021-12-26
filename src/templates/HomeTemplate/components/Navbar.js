@@ -1,11 +1,14 @@
 import React, { useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import logo from './../../../assets/logo.png'
 import {AccountCircle , Dehaze , FilterTiltShift} from '@mui/icons-material'
 import { useEffect } from 'react'
 
+
 const Navbar = () => {
-    const navBarRef = useRef(null)
+    
+    const menuRef = useRef()
+    const navBarRef = useRef()
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
@@ -16,19 +19,37 @@ const Navbar = () => {
             }
         })
         return () => {
-            window.removeEventListener('scroll')
+            window.removeEventListener('scroll', () => {
+
+            })
         }
     }, [])
+
+    const handleAddClassActive = (e) => {
+        const listSpanEle = menuRef.current.querySelectorAll('a');
+        [...listSpanEle].forEach(item => {
+            if(item === e.target){
+                e.target.classList.add('active')
+            }else{
+                item.classList.remove('active')
+
+            }
+        });
+    }
+
     
     return (
         <div className='navbar' ref={navBarRef}>
             <Link className="navbar-logo" to='/'>
                 <img src={logo} alt="logo" />
             </Link>
-            <div className="navbar-menu">
-                <span className='active'>Nơi ở</span>
-                <span>Trải nghiệm</span>
-                <Link to='/products'>Trải nghiệm trực tuyén</Link>
+            <div className="navbar-menu" ref={menuRef}>
+                {/* <span className='active' onClick={handleAddClassActive}>Nơi ở</span>
+                <span onClick={handleAddClassActive}>Trải nghiệm</span>
+                <span onClick={handleAddClassActive}>Trải nghiệm trực tuyén</span> */}
+                <Link to='/' className='active' onClick={handleAddClassActive}>Nơi ở</Link>
+                <Link to='/' onClick={handleAddClassActive}>Trải nghiệm</Link>
+                <Link to='/products' onClick={handleAddClassActive}>Trải nghiệm trực tuyén</Link>
             </div>
             
             <div className="navbar-right">

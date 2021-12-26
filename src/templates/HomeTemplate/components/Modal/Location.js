@@ -45,7 +45,13 @@ const Location = ({valueSearch , isPlace}) => {
                 <div style={{display: isPlace? "block" : "none"}} className='location'>
                     <p>MỌI LÚC, MỌI NƠI</p>
                     <button>
-                        <Link  to='/products'>Tìm kiếm linh hoạt</Link>
+                        {
+                            location?.map((item , index) => (
+                                <div key={index}>
+                                    <Link to={`/products?id=${item._id}&img=${item.image}`}>Tìm kiếm linh hoạt</Link>
+                                </div>
+                            ))
+                        }
                         <ChevronRight className='icon'/>
                     </button> 
                 </div>
