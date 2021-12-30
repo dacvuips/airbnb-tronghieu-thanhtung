@@ -1,8 +1,9 @@
-import * as ActionType from '../constants/Product'
+import * as ActionType from '../constants/ListProduct'
 
 const initialState = {
     error : null,
     listProduct : null,
+    length: 0,
 }
 
 const ProductReducer = (state = initialState , action) => {
@@ -13,7 +14,8 @@ const ProductReducer = (state = initialState , action) => {
             return {...state}
         case ActionType.PRODUCT_SUCCESS: 
             state.error = null
-            state.listProduct = action.payload
+            state.listProduct = action.payload.data
+            state.length = action.payload.length ? action.payload.length : state.length
             return {...state}
         case ActionType.PRODUCT_FAILED:
             state.error = action.payload
