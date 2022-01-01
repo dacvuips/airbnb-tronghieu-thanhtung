@@ -4,9 +4,14 @@ import { createBrowserHistory } from "history";
 import PageNotFound from "pages/PageNotFound";
 // import Register from "pages/Register/Register";
 import { Route, Router, Switch } from "react-router";
+<<<<<<< HEAD
 import { renderCheckOut, renderRoutesAdmin, renderRoutesHome } from "Router";
 // import { HomeTemplate } from "templates/HomeTemplate/HomeTemplate";
 import "./App.scss";
+=======
+import { renderRoutesAdmin, renderRoutesHome } from "Router";
+import { HomeTemplate } from "templates/HomeTemplate/HomeTemplate";
+>>>>>>> 06ac8c5f7b79c40e473c0ee14674b0618f18ac29
 
 export const history = createBrowserHistory();
 function App() {
