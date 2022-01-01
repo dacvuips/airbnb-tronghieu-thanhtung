@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import {
-  NavLink,
-  //  withRouter
-} from "react-router-dom";
+
+import { NavLink, withRouter } from "react-router-dom";
 // import { actLogout } from "./../../AuthPage/modules/actions";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 import {
   AppstoreOutlined,
   UserAddOutlined,
@@ -13,6 +11,7 @@ import {
   VideoCameraOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
+import { clearUser } from "redux/actions/LoginAction";
 
 const { Sider } = Layout;
 class Navbar extends Component {
@@ -42,7 +41,7 @@ class Navbar extends Component {
               <NavLink
                 activeClassName="active"
                 className="nav-link"
-                to="/dashboard"
+                to="/admin/dashboard"
               >
                 <span>Dashboard</span>
               </NavLink>
@@ -58,7 +57,11 @@ class Navbar extends Component {
             </Menu.Item> */}
 
             <Menu.Item key="3" icon={<VideoCameraOutlined />}>
-              <NavLink activeClassName="active" className="nav-link" to="/room">
+              <NavLink
+                activeClassName="active"
+                className="nav-link"
+                to="/admin/room"
+              >
                 <span>Thông tin phòng</span>
               </NavLink>
             </Menu.Item>
@@ -66,7 +69,7 @@ class Navbar extends Component {
               <NavLink
                 activeClassName="active"
                 className="nav-link"
-                to="/local"
+                to="/admin/local"
               >
                 <span>Thông tin địa điểm</span>
               </NavLink>
@@ -76,7 +79,7 @@ class Navbar extends Component {
               <NavLink
                 activeClassName="active"
                 className="nav-link"
-                to="/usermanager"
+                to="/admin/usermanager"
               >
                 <span>Người dùng</span>
               </NavLink>
@@ -148,15 +151,14 @@ class Navbar extends Component {
   }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     logout: (history) => {
-//       dispatch(actLogout(history));
-//     },
-//   };
-// };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logout: (history) => {
+      dispatch(clearUser(history));
+    },
+  };
+};
 
-// const ConnectedComponent = connect(null, mapDispatchToProps)(Navbar);
+const ConnectedComponent = connect(null, mapDispatchToProps)(Navbar);
 
-// export default withRouter(ConnectedComponent);
-export default Navbar;
+export default withRouter(ConnectedComponent);

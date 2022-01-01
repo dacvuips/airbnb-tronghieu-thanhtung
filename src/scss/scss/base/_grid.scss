@@ -1,0 +1,212 @@
+/* PC */
+@media only screen and (min-width: 62em) {
+  #nav {
+    display: none;
+  }
+}
+
+/* Mobile: width < 740px */
+@media only screen and (max-width: 46.1875em) {
+  .site-layout {
+    margin-left: auto !important;
+  }
+  .header__menu-login {
+    display: none !important;
+  }
+  #header {
+    display: none;
+  }
+  .navbar {
+    justify-content: flex-end;
+    // width: 300px;
+    margin-left: auto;
+    .navbar-toggler {
+      background-color: $textWhite;
+    }
+    .navbar-collapse {
+      background-color: $bg-quickdetail;
+      padding: 16px;
+      border-radius: 4px;
+      box-shadow: 0 0 3.125rem #000;
+      margin-top: 10px;
+    }
+  }
+
+  .content {
+    padding: 12px 15px 15px 15px;
+    .info {
+      .info-img {
+        width: 30%;
+      }
+      .info-desc {
+        color: $textWhite;
+        width: 60%;
+        font-size: 1.5vh;
+        line-height: 12px;
+      }
+    }
+  }
+  #listMovie {
+    .listMovie__container {
+      padding: 6.4px 10px;
+      .listMovie__item {
+        .listMovie__content {
+          .listMovie__title {
+            span {
+              font-size: 1.8vh;
+            }
+          }
+          .listMovie__showDate {
+            span {
+              font-size: 1.8vh;
+            }
+          }
+          .listMovie__rating {
+            span {
+              font-size: 1.8vh;
+            }
+          }
+        }
+
+        .listMovie__img {
+          .listMovie__img-link {
+            .listMovie__img-i {
+              height: 150px;
+            }
+          }
+        }
+      }
+    }
+  }
+  #banner {
+    padding: 6.4px 10px;
+  }
+  #card {
+    .card__container {
+      padding: 6.4px 10px;
+    }
+  }
+  .info-group {
+    a {
+      padding: 6px 11px;
+    }
+    .info-see {
+      i {
+        font-size: 14px;
+      }
+      .carousel__info-text {
+        font-size: 12px;
+      }
+    }
+
+    .info-detail {
+      i {
+        font-size: 14px;
+      }
+      .carousel__info-text {
+        font-size: 12px;
+      }
+    }
+  }
+  .card__img {
+    margin-top: 20px;
+  }
+  .card__section {
+    display: flex;
+    .card__img {
+      min-width: 150px !important;
+      margin-right: 15px;
+    }
+  }
+}
+
+/* Tablet: width >= 740px and width < 1024px */
+@media only screen and (min-width: 46.25em) and (max-width: 62em) {
+  .header__menu {
+    display: none !important;
+  }
+  .site-layout {
+    margin-left: auto !important;
+  }
+  #header {
+    display: none;
+  }
+  .navbar {
+    justify-content: flex-end;
+    // width: 300px;
+    margin-left: auto;
+    .navbar-toggler {
+      background-color: $textWhite;
+    }
+    .navbar-collapse {
+      background-color: $bg-quickdetail;
+      padding: 16px;
+      border-radius: 4px;
+      box-shadow: 0 0 3.125rem #000;
+      margin-top: 10px;
+    }
+  }
+  .navbar__submenu-list {
+    display: flex;
+    .navbar__submenu-item {
+      margin-right: 20px;
+    }
+  }
+  .content {
+    padding: 12px 15px 15px 15px;
+    .info {
+      .info-img {
+        width: 30%;
+      }
+      .info-desc {
+        color: $textWhite;
+        width: 60%;
+        font-size: 2vh;
+        line-height: 28px;
+      }
+    }
+  }
+
+  #listMovie {
+    .listMovie__container {
+      padding: 6.4px 10px;
+    }
+  }
+  #banner {
+    padding: 6.4px 10px;
+  }
+  #card {
+    .card__container {
+      padding: 6.4px 10px;
+    }
+  }
+  .info-group {
+    a {
+      padding: 6px 11px;
+    }
+    .info-see {
+      i {
+        font-size: 14px;
+      }
+      .carousel__info-text {
+        font-size: 12px;
+      }
+    }
+
+    .info-detail {
+      i {
+        font-size: 14px;
+      }
+      .carousel__info-text {
+        font-size: 12px;
+      }
+    }
+  }
+  .login {
+    .login__QR-text {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

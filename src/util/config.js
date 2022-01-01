@@ -1,0 +1,3 @@
+export const DOMAIN = "https://airbnb.cybersoft.edu.vn";
+export const TOKEN =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGU1YmVjOTljMTc0ZjNhZGM1ZDVlNzgiLCJlbWFpbCI6ImtoYTl4MDE1OUBnbWFpbC5jb20iLCJ0eXBlIjoiQ0xJRU5UIiwiaWF0IjoxNjI1NjY5MzMzfQ.dfzJTePP9j8CRqvUIHD8tDXbbVWwflHoqvFGRnqsDus";

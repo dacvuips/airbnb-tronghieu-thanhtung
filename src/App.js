@@ -1,11 +1,11 @@
 import { createBrowserHistory } from "history";
-import Home from "pages/Home/Home";
-import Login from "pages/Login/Login";
+// import Home from "pages/Home/Home";
+// import Login from "pages/Login/Login";
 import PageNotFound from "pages/PageNotFound";
-import Register from "pages/Register/Register";
+// import Register from "pages/Register/Register";
 import { Route, Router, Switch } from "react-router";
-import { renderRoutesAdmin, renderRoutesHome } from "Router";
-import { HomeTemplate } from "templates/HomeTemplate/HomeTemplate";
+import { renderCheckOut, renderRoutesAdmin, renderRoutesHome } from "Router";
+// import { HomeTemplate } from "templates/HomeTemplate/HomeTemplate";
 import "./App.scss";
 
 export const history = createBrowserHistory();
@@ -15,6 +15,7 @@ function App() {
       <Switch>
         {renderRoutesHome()}
         {renderRoutesAdmin()}
+        {renderCheckOut()}
         {/* <Route path="/auth" component={AuthPage} /> */}
 
         {/* Trang k ton tai - de o cuoi cung */}

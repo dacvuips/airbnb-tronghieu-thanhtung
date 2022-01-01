@@ -33,16 +33,16 @@ export default function AdminTemplate({ Component, ...props }) {
     <Route
       {...props}
       render={(propsRoute) => {
-        // if (localStorage.getItem("UserAdmin")) {
-
-        // }
+        // if (localStorage.getItem("USER_ADMIN")) {
         return (
           <LayoutAdmin>
             <Component {...propsRoute} />
           </LayoutAdmin>
         );
-        // //redirect ve /auth
-        // return <Redirect to="/auth" />;
+        // }
+        // alert("Bạn không có quyền truy cập");
+        // //redirect ve /login
+        // return <Redirect to="/login" />;
       }}
     />
   );
