@@ -1,14 +1,18 @@
-import React, { useEffect } from "react";
-import { Table } from "antd";
+import React, { useEffect, useState } from "react";
+import { Table, Input } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
   deleteUserManagerAction,
+  getUserIDAction,
   getUserManagerAction,
 } from "redux/actions/UserManagerAction";
 
+import ModalID from "./modal";
+import ModalAddAdmin from "./modalAddAdmin";
+const { Search } = Input;
 export default function UserManager(props) {
-  const { userData } = useSelector((state) => state.UserManagerReducer);
+  const { userData, userID } = useSelector((state) => state.UserManagerReducer);
 
   const dispatch = useDispatch();
 
@@ -19,6 +23,10 @@ export default function UserManager(props) {
     fechData();
   }, []);
 
+  const [update, setupdate] = useState({
+    update: null,
+  });
+
   const columns = [
     {
       title: "Name",
@@ -26,11 +34,25 @@ export default function UserManager(props) {
     },
 
     {
-      title: "Age",
+      title: "Avatar",
 
-      dataIndex: "birthday",
+      dataIndex: "avatar",
       defaultSortOrder: "descend",
-      sorter: (a, b) => a.age - b.age,
+      render: (text, user) => {
+        return (
+          <>
+            <img
+              src={
+                user.avatar
+                  ? user.avatar
+                  : "https://carnbrae.com.au/wp-content/uploads/2021/05/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"
+              }
+              alt="hình ảnh"
+              style={{ width: "50px", height: "50px" }}
+            />
+          </>
+        );
+      },
     },
     {
       title: "Address",
@@ -48,7 +70,28 @@ export default function UserManager(props) {
       render: (text, user) => {
         return (
           <>
-            <div className="btn btn-outline-info mr-2">Edit</div>
+            <div
+              data-toggle="modal"
+              data-target="#exampleModal"
+              className="btn btn-outline-warning mr-2"
+              onClick={() => {
+                dispatch(getUserIDAction(user._id));
+                setupdate({ update: null });
+              }}
+            >
+              Chi tiết
+            </div>
+            <div
+              data-toggle="modal"
+              data-target="#exampleModal"
+              className="btn btn-outline-info mr-2"
+              onClick={() => {
+                dispatch(getUserIDAction(user._id));
+                setupdate({ update: true });
+              }}
+            >
+              Sửa
+            </div>
             <div
               className="btn btn-danger"
               onClick={() => {
@@ -56,7 +99,7 @@ export default function UserManager(props) {
                 console.log(user._id);
               }}
             >
-              Delete
+              Xóa
             </div>
           </>
         );
@@ -71,13 +114,27 @@ export default function UserManager(props) {
 
   return (
     <>
-      Quản lý người dùng
+      <h1>Quản lý người dùng</h1>
+      <button
+        data-toggle="modal"
+        data-target="#exampleModal1"
+        className="btn btn-warning mb-3"
+      >
+        Thêm Quản Trị Viên
+      </button>
+      <Search
+        className="mb-3 w-100"
+        placeholder="Nhập vào tài khoản hoặc họ tên người dùng"
+        style={{ width: 200 }}
+      />
       <Table
         rowKey={"_id"}
         columns={columns}
         dataSource={data}
         onChange={onChange}
       />
+      <ModalID user={userID} update={update} />
+      <ModalAddAdmin />
     </>
   );
 }

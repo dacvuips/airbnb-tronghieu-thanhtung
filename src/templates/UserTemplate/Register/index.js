@@ -44,7 +44,7 @@ function RegisterPage(props) {
       .max(10, "Mật khẩu quá dài, dưới 10 ký tự "),
     phone: Yup.string()
       .required("Không được để trống")
-      .length(10, "10 số điện thoại"),
+      .length(9, "10 số điện thoại"),
     birthday: Yup.string().required("Không được để trống"),
     address: Yup.string().required("Không được để trống"),
   });

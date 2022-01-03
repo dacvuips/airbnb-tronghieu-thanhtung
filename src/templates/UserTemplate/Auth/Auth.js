@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 // import { actAuthApi } from "./modules/actions";
 import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
@@ -20,21 +20,21 @@ import { loginAction } from "redux/actions/LoginAction";
 // import { NavLink } from "react-router-dom";
 
 function AuthPage(props) {
-  const [state, setState] = useState({ email: "", password: "" });
+  // const [state, setState] = useState({ email: "", password: "" });
   const dispatch = useDispatch();
-  console.log(props);
-  const handleOnChange = (event) => {
-    const { name, value } = event.target;
-    setState({
-      ...state,
-      [name]: value,
-    });
-  };
 
-  const handleLogin = (event) => {
-    event.preventDefault();
-    dispatch(loginAction(state, props.history));
-  };
+  // const handleOnChange = (event) => {
+  //   const { name, value } = event.target;
+  //   setState({
+  //     ...state,
+  //     [name]: value,
+  //   });
+  // };
+
+  // const handleLogin = (event) => {
+  //   event.preventDefault();
+  //   dispatch(loginAction(state, props.history));
+  // };
 
   //   if (loading) return <Loader />;
 
@@ -62,7 +62,7 @@ function AuthPage(props) {
   };
 
   const onSubmit = (values) => {
-    console.log(values);
+    dispatch(loginAction(values, props.history));
   };
   const formik = useFormik({
     initialValues,

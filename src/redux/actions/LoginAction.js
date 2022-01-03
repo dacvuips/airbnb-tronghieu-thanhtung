@@ -36,6 +36,7 @@ const clearUser = (history) => {
   localStorage.removeItem("USER_ADMIN");
   localStorage.removeItem("USER_LOGIN");
   localStorage.removeItem("exp");
+  localStorage.removeItem("token");
   history.replace("/login");
   return {
     type: USER_LOGOUT,

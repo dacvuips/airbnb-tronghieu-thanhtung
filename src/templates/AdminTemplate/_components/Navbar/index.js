@@ -12,6 +12,7 @@ import {
 } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import { clearUser } from "redux/actions/LoginAction";
+const user1 = JSON.parse(localStorage.getItem("USER_ADMIN"));
 
 const { Sider } = Layout;
 class Navbar extends Component {
@@ -31,13 +32,16 @@ class Navbar extends Component {
           onCollapse={(collapsed, type) => {}}
         >
           <div className="logo mt-2"></div>
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={["4"]}>
-            <Menu.Item>
+          <Menu theme="dark" mode="inline">
+            <Menu.Item key="1">
               <NavLink className="btn" to="/">
                 <span>Home</span>
               </NavLink>
             </Menu.Item>
-            <Menu.Item key="1" icon={<AppstoreOutlined />}>
+            <div className="btn btn-outline-warning w-100">
+              {user1.user.name}
+            </div>
+            <Menu.Item key="2" icon={<AppstoreOutlined />}>
               <NavLink
                 activeClassName="active"
                 className="nav-link"
@@ -65,7 +69,7 @@ class Navbar extends Component {
                 <span>Thông tin phòng</span>
               </NavLink>
             </Menu.Item>
-            <Menu.Item key="6" icon={<VideoCameraAddOutlined />}>
+            <Menu.Item key="4" icon={<VideoCameraAddOutlined />}>
               <NavLink
                 activeClassName="active"
                 className="nav-link"
@@ -75,7 +79,7 @@ class Navbar extends Component {
               </NavLink>
             </Menu.Item>
 
-            <Menu.Item key="11" icon={<UserAddOutlined />}>
+            <Menu.Item key="5" icon={<UserAddOutlined />}>
               <NavLink
                 activeClassName="active"
                 className="nav-link"
@@ -85,7 +89,7 @@ class Navbar extends Component {
               </NavLink>
             </Menu.Item>
 
-            <Menu.Item key="5" icon={<LogoutOutlined />}>
+            <Menu.Item key="6" icon={<LogoutOutlined />}>
               <button
                 className="btn btn-danger w-100 "
                 onClick={() => {

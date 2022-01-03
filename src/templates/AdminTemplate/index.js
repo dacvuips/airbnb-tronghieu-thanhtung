@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import Navbar from "./_components/Navbar";
 import { Layout } from "antd";
 const { Content, Footer } = Layout;
@@ -33,16 +33,16 @@ export default function AdminTemplate({ Component, ...props }) {
     <Route
       {...props}
       render={(propsRoute) => {
-        // if (localStorage.getItem("USER_ADMIN")) {
-        return (
-          <LayoutAdmin>
-            <Component {...propsRoute} />
-          </LayoutAdmin>
-        );
-        // }
-        // alert("Bạn không có quyền truy cập");
-        // //redirect ve /login
-        // return <Redirect to="/login" />;
+        if (localStorage.getItem("USER_ADMIN")) {
+          return (
+            <LayoutAdmin>
+              <Component {...propsRoute} />
+            </LayoutAdmin>
+          );
+        }
+        alert("Bạn không có quyền truy cập");
+
+        return <Redirect to="/login" />;
       }}
     />
   );
