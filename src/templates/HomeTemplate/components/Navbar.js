@@ -1,5 +1,5 @@
-import React, { useRef } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import React, { useRef, useState } from 'react'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import logo from './../../../assets/logo.png'
 import {AccountCircle , Dehaze , FilterTiltShift} from '@mui/icons-material'
 import { useEffect } from 'react'
@@ -19,8 +19,10 @@ const mainNav = [
     },
 ]
 
+
+
 const Navbar = () => {
-    
+    const [showLogin , setShowLogin] = useState(false)
     const navBarRef = useRef()
     const { pathname } = useLocation()
 
@@ -40,7 +42,7 @@ const Navbar = () => {
             })
         }
     }, [])
-    
+
     return (
         <div className='navbar' ref={navBarRef}>
             <Link className="navbar-logo" to='/'>
@@ -60,8 +62,27 @@ const Navbar = () => {
                 <span>Trở thành chủ nhà</span>
                 <FilterTiltShift />
                 <div className="navbar-right-login">
-                    <Dehaze className='navbar-right-login-icon'/>
-                    <AccountCircle className='navbar-right-login-icon'/>
+                    <div className="navbar-right-login-icon" onClick={() => setShowLogin(!showLogin)}>
+                        <Dehaze className='navbar-right-login-item'/>
+                        <AccountCircle/>
+                    </div>
+                    {showLogin &&             
+                    <div className="navbar-right-login-user">
+                        <NavLink  
+                            activeClassName="active"
+                            className="nav-link header--nav-link"
+                            to='/register'
+                        >
+                            Đăng kí
+                        </NavLink>
+                        <NavLink  
+                            activeClassName="active"
+                            className="nav-link header--nav-link"
+                            to='/login'
+                        >
+                            Đăng nhập
+                        </NavLink>
+                    </div>}
                 </div>
             </div>
         </div>

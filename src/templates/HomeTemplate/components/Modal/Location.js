@@ -27,7 +27,7 @@ const Location = ({valueSearch , isPlace}) => {
                 <div style={{display: isPlace? "block" : "none"}} className='location' >
                     {
                         listSearch.map((item) => (
-                            <Link className='location-search' key={item.id} to={`/product-detail/${item.id}`}>
+                            <Link className='location-search' key={item._id} to={`/product-detail/${item._id}`}>
                                 <span>{item.name} , </span>
                                 <span>{item.province} , </span>
                                 <span>{item.country}</span>
@@ -35,7 +35,7 @@ const Location = ({valueSearch , isPlace}) => {
                         ))
                     }
                 </div>
-                : 
+                :
                 <div style={{display: isPlace? "block" : "none"}} className='location'>
                     <p>MỌI LÚC, MỌI NƠI</p>
                     <button>

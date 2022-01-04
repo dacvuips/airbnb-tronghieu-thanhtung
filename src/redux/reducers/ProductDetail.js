@@ -2,10 +2,10 @@ import * as ActionType from './../constants/ProductDetail'
 
 const initialState = {
     error: null,
-    productDetail: null 
+    productDetail: null
 }
 
-const productDetailReducer = (state = initialState , action) => {
+const ProductDetailReducer = (state = initialState , action) => {
     switch (action.type) {
         case ActionType.PRODUCTDETAIL_REQUEST:
             state.error = null
@@ -24,4 +24,4 @@ const productDetailReducer = (state = initialState , action) => {
     }
 }
 
-export default productDetailReducer
+export default ProductDetailReducer

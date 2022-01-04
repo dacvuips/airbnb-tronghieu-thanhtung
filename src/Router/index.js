@@ -1,5 +1,3 @@
-import Login from "pages/Login/Login";
-import Register from "pages/Register/Register";
 import AdminTemplate from "templates/AdminTemplate";
 import Dashboard from "templates/AdminTemplate/Dashboard";
 import LocalInfoManager from "templates/AdminTemplate/LocalInfoManager";
@@ -11,6 +9,9 @@ import Home from "templates/HomeTemplate/Home";
 import HomeTemplate from "templates/HomeTemplate/HomeTemplate";
 import Postcards from "templates/HomeTemplate/Postcards";
 import ListProducts from "templates/HomeTemplate/ListProducts";
+import Login from "templates/UserTemplate/Login/Login"
+import Register from "templates/UserTemplate/Register/Register";
+import UserTemplate from "templates/UserTemplate";
 
 
 const routesHome = [
@@ -67,8 +68,8 @@ const routesAdmin = [
   },
 ];
 
+
 const checkOut = [
-  //localhost:3000/dashboard
   {
     exact: false,
     path: "/register",
@@ -107,16 +108,16 @@ function renderRoutesAdmin() {
   });
 }
 
-// function renderCheckOut() {
-//   return checkOut.map((route, index) => {
-//     return (
-//       <CheckoutTemplate
-//         key={index}
-//         exact={route.exact}
-//         path={route.path}
-//         Component={route.component}
-//       />
-//     );
-//   });
-// }
-export { renderRoutesHome, renderRoutesAdmin };
+function renderCheckOut() {
+  return checkOut.map((route, index) => {
+    return (
+      <UserTemplate
+        key={index}
+        exact={route.exact}
+        path={route.path}
+        Component={route.component}
+      />
+    );
+  });
+}
+export { renderRoutesHome, renderRoutesAdmin , renderCheckOut};

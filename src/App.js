@@ -1,7 +1,7 @@
 import { createBrowserHistory } from "history";
 import PageNotFound from "pages/PageNotFound";
 import { Route, Router, Switch } from "react-router";
-import { renderRoutesAdmin, renderRoutesHome } from "Router";
+import { renderCheckOut, renderRoutesAdmin, renderRoutesHome } from "Router";
 
 export const history = createBrowserHistory();
 function App() {
@@ -10,6 +10,7 @@ function App() {
       <Switch>
         {renderRoutesHome()}
         {renderRoutesAdmin()}
+        {renderCheckOut()}
         {/* <Route path="/auth" component={AuthPage} /> */}
 
         {/* Trang k ton tai - de o cuoi cung */}

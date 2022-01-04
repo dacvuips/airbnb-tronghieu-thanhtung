@@ -23,7 +23,7 @@ const ListProducts = () => {
                     {
                         listProduct?.map((item) => (
                             <>
-                                <Link  className="col-2 product-item" key={item.id} to={`/product-detail/${item.id}`}>
+                                <Link  className="col-2 product-item" key={item._id} to={`/product-detail/${item._id}`}>
                                     <img 
                                     
                                         src={item.image || productImg} 
