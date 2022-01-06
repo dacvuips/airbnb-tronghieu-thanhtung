@@ -25,6 +25,7 @@ const Navbar = () => {
     const [showLogin , setShowLogin] = useState(false)
     const navBarRef = useRef()
     const { pathname } = useLocation()
+    
 
     const activeNav = mainNav.findIndex((e) => e.path === pathname)
 
@@ -42,6 +43,7 @@ const Navbar = () => {
             })
         }
     }, [])
+
 
     return (
         <div className='navbar' ref={navBarRef}>

@@ -1,0 +1,40 @@
+.login{
+    width: 800px;
+    height: 65vh;
+    margin: auto;
+    padding-top: 100px;
+    &__header{
+        text-align: center;
+        span{
+            font-size: 17px;
+            font-weight: bold;
+        }
+        &-qr{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 10px;
+            p{
+                margin-bottom: 0;
+                margin-right: 5px;
+            }
+        }
+    }
+    &__forgot{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0;
+        &-text{
+            margin-right: 10px;
+            color: #000;
+            &:hover{
+                color: #000;
+            }
+        }
+    }
+}
+
+.ant-form-item-label > label{
+    width: 100px;
+}

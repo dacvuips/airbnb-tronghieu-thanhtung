@@ -4,9 +4,6 @@ import * as Yup from "yup";
 import { Form, Input } from "antd";
 import {
   QrcodeOutlined,
-  FacebookOutlined,
-  AppleOutlined,
-  GooglePlusOutlined,
 } from "@ant-design/icons";
 import { NavLink, Link } from "react-router-dom";
 
@@ -40,14 +37,16 @@ function Login() {
           <div className="col login__content mx-auto p-4">
             <div className="login__header">
               <span>Đăng Nhập</span>
-              <p className="login__QR-text">Đăng nhập với mã QR</p>
-              <QrcodeOutlined
-                style={{
-                  fontSize: "65px",
-                  color: "rgb(253, 73, 2)",
-                  cursor: "pointer",
-                }}
-              />
+              <div className="login__header-qr">
+                <p className="login__QR-text">Đăng nhập với mã QR</p>
+                <QrcodeOutlined
+                  style={{
+                    fontSize: "28px",
+                    color: "rgb(253, 73, 2)",
+                    cursor: "pointer",
+                  }}
+                />
+              </div>
             </div>
             <form onSubmit={formik.handleSubmit}>
               <div className="form-group mt-3">
@@ -86,63 +85,21 @@ function Login() {
               </button>
             </form>
 
-            <div className="login__forgot-container">
-              <Link to="# " className="login__forgot-text">
-                <span>Quên mật khẩu</span>
-              </Link>
-              <Link to="# " className="login__forgot-text">
-                <span>Đăng nhập với SMS</span>
-              </Link>
-            </div>
-            <div className="login__text-or">
-              <div className="login__text-through"></div>
-              <span>Hoặc</span>
-              <div className="login__text-through"></div>
-            </div>
-            <div className="row d-flex login__social-container">
-              <div className="login__social-FB">
-                <FacebookOutlined
-                  style={{
-                    fontSize: "35px",
-                    color: "#fff",
-                    cursor: "pointer",
-                  }}
-                />
-                <p>Facebook</p>
+            <div className="login__forgot">
+              <div className="login__forgot-login">
+                <Link to="# " className="login__forgot-text">
+                  <span>Quên mật khẩu</span>
+                </Link>
+                <Link to="# " className="login__forgot-text">
+                  <span>Đăng nhập với SMS</span>
+                </Link>
               </div>
-              <div className="login__social-FB">
-                <GooglePlusOutlined
-                  style={{
-                    fontSize: "35px",
-                    color: "#fff",
-                    cursor: "pointer",
-                    paddingLeft: "5px",
-                  }}
-                />
-                <p>Google</p>
+              <div className="login__Register">
+                <span>Bạn mới biết đến chung tôi?</span>
+                <NavLink to="/register" className="login__forgot-text">
+                  <span> - Đăng ký -</span>
+                </NavLink>
               </div>
-              <div
-                className="login__social-FB"
-                style={{
-                  backgroundColor: "#000",
-                }}
-              >
-                <AppleOutlined
-                  style={{
-                    fontSize: "35px",
-                    color: "#fff",
-                    cursor: "pointer",
-                    backgroundColor: "#000",
-                  }}
-                />
-                <p>Apple</p>
-              </div>
-            </div>
-            <div className="login__Register">
-              <span>Bạn mới biết đến chung tôi?</span>
-              <NavLink to="/register" className="login__forgot-text">
-                <span> - Đăng ký -</span>
-              </NavLink>
             </div>
           </div>
         </div>
