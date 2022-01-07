@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { actLocation } from '../../../../redux/actions/Location'
 import { useDispatch, useSelector } from 'react-redux'
 
+
 const Location = ({valueSearch , isPlace}) => {
     const { listLocation } = useSelector(state => state.LocationReducer)
     const dispatch = useDispatch()

@@ -10,6 +10,7 @@ const ListProducts = () => {
     const { listProduct,length } = useSelector((state) => state.ProductReducer)
     const [currentPage,setCurrentPage] = useState(1);
     const dispatch = useDispatch()
+    const usd = '20000'
     const pageSize = 24;
 
     useEffect(() => {
@@ -34,7 +35,7 @@ const ListProducts = () => {
                                         <span>{item.locationId?.name}</span>
                                         <span>{item.locationId?.province}</span>
                                     </div>
-                                    <p>{item.price} VND / đêm</p>
+                                    <p>{item.price/usd}$/ đêm</p>
                                 </Link>
                             </>
                     ))

@@ -3,6 +3,8 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import logo from './../../../assets/logo.png'
 import {AccountCircle , Dehaze , FilterTiltShift} from '@mui/icons-material'
 import { useEffect } from 'react'
+import { useSelector,useDispatch } from 'react-redux'
+import { actLoginSuccess } from 'redux/actions/Login'
 
 const mainNav = [
     {
@@ -25,8 +27,8 @@ const Navbar = () => {
     const [showLogin , setShowLogin] = useState(false)
     const navBarRef = useRef()
     const { pathname } = useLocation()
-    
-
+         const dispatch = useDispatch()
+    const {userLogin} = useSelector(state => state.LoginReducer)
     const activeNav = mainNav.findIndex((e) => e.path === pathname)
 
     useEffect(() => {
@@ -70,6 +72,14 @@ const Navbar = () => {
                     </div>
                     {showLogin &&             
                     <div className="navbar-right-login-user">
+                        {userLogin? <>
+                            <p  className="login__forgot-text" onClick={() => {
+                                dispatch(actLoginSuccess(null))
+                                localStorage.clear();
+                            }}>
+                                <span> - Đăng xuất -</span>
+                            </p>
+                        </> : <>
                         <NavLink  
                             activeClassName="active"
                             className="nav-link header--nav-link"
@@ -84,6 +94,8 @@ const Navbar = () => {
                         >
                             Đăng nhập
                         </NavLink>
+                        </>}
+                      
                     </div>}
                 </div>
             </div>

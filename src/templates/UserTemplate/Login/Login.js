@@ -6,9 +6,11 @@ import {
   QrcodeOutlined,
 } from "@ant-design/icons";
 import { NavLink, Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loginAction } from "redux/actions/Login";
 
 function Login() {
-
+  const dispatch = useDispatch()
   const validationSchema = Yup.object({
     email: Yup.string()
       .required("Không được để trống")
@@ -24,6 +26,8 @@ function Login() {
 
   const onSubmit = (values) => {
     console.log(values);
+    // dawng nhap chua lam a oi ::)
+    dispatch(loginAction(values))
   };
   const formik = useFormik({
     initialValues,

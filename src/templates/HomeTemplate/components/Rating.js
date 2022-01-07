@@ -11,14 +11,14 @@ const Rating = ({ rating }) => {
     }
 
     return (
-        <div>
+        <>
             <img 
                 style={{width: '14px' , height: '14px'}}
                 src="https://dictionary.cambridge.org/images/thumb/star_noun_001_16391.jpg?version=5.0.203" 
                 alt="" 
             />
             {renderStar(rating)}
-        </div>
+        </>
     )
 }
 

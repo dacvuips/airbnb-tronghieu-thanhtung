@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 import { actProdctDetail } from 'redux/actions/ProductDetail'
 import BookRoom from './components/BookRoom'
 import Rating from './components/Rating'
-
+import ProductImg from './../../assets/product.png'
 
 
 const DetailProduct = () => {
@@ -13,6 +13,7 @@ const DetailProduct = () => {
     console.log(productDetail)
     const { id } = useParams()  
     const dispatch = useDispatch()
+    const usd = '20000'
     const errorLocation = 'Việt Nam'
 
     useEffect(() => {
@@ -54,19 +55,19 @@ const DetailProduct = () => {
             </div>
             <div className="detailProduct-img">
                 <div className="item1">
-                    <img  src={productDetail?.image} alt={productDetail?.name} />
+                    <img  src={productDetail?.image || ProductImg} alt={productDetail?.name} />
                 </div>
                 <div className="item2">
-                    <img  src={productDetail?.image} alt={productDetail?.name} />
+                    <img  src={productDetail?.image || ProductImg} alt={productDetail?.name} />
                 </div>
                 <div className="item3">
-                    <img  src={productDetail?.image} alt={productDetail?.name} />
+                    <img  src={productDetail?.image || ProductImg} alt={productDetail?.name} />
                 </div>
                 <div className="item4">
-                    <img  src={productDetail?.image} alt={productDetail?.name} />
+                    <img  src={productDetail?.image || ProductImg} alt={productDetail?.name} />
                 </div>
                 <div className="item5">
-                    <img  src={productDetail?.image} alt={productDetail?.name} />
+                    <img  src={productDetail?.image || ProductImg} alt={productDetail?.name} />
                 </div>
             </div>
             <div className="detailProduct-desc">
