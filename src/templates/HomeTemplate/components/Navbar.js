@@ -68,16 +68,24 @@ const Navbar = () => {
                 <div className="navbar-right-login">
                     <div className="navbar-right-login-icon" onClick={() => setShowLogin(!showLogin)}>
                         <Dehaze className='navbar-right-login-item'/>
-                        <AccountCircle/>
+                        {
+                            userLogin? <>
+                            <Link to='/user-info'>
+                                <AccountCircle />
+                            </Link>
+                            </> : <>
+                                <AccountCircle />
+                            </>
+                        }
                     </div>
                     {showLogin &&             
                     <div className="navbar-right-login-user">
                         {userLogin? <>
-                            <p  className="login__forgot-text" onClick={() => {
+                            <p className="login__forgot-text" onClick={() => {
                                 dispatch(actLoginSuccess(null))
                                 localStorage.clear();
                             }}>
-                                <span> - Đăng xuất -</span>
+                                <Link to='/'> - Đăng xuất -</Link>
                             </p>
                         </> : <>
                         <NavLink  
@@ -95,7 +103,6 @@ const Navbar = () => {
                             Đăng nhập
                         </NavLink>
                         </>}
-                      
                     </div>}
                 </div>
             </div>

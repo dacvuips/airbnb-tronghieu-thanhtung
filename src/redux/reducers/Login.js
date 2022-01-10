@@ -15,7 +15,7 @@ const stateDefault = {
 
 const LoginReducer = (state = stateDefault, action) => {
   switch (action.type) {
-
+    
     case ActionType.POST_USER_LOGIN_SUCCESS:
       state.userLogin = action.payload;
       return {...state}

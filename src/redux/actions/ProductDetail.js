@@ -35,3 +35,37 @@ const actProdctDetailFailed = (error) => {
     }
 }
 
+export const actCommentProductDetail = (id) => {
+    return (dispatch) => {
+      dispatch(actCommentProductDetailRequest());
+      api
+        .get(`/api/reviews/byRoom?roomId=${id}`)
+        .then((result) => {
+          dispatch(actCommentProductDetailSuccess(result.data));
+        })
+        .catch((error) => {
+          dispatch(actCommentProductDetailFailed(error));
+        });
+    };
+  };
+  
+  const actCommentProductDetailRequest = () => {
+    return {
+      type: ActionType.COMMENT_PRODUCT_DETAIL_REQUEST,
+    };
+  };
+  
+  const actCommentProductDetailSuccess = (data) => {
+    return {
+      type: ActionType.COMMENT_PRODUCT_DETAIL_SUCCESS,
+      payload: data,
+    };
+  };
+  
+  const actCommentProductDetailFailed = (error) => {
+    return {
+      type: ActionType.COMMENT_PRODUCT_DETAIL_FAILED,
+      payload: error,
+    };
+  };
+  

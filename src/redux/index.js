@@ -3,14 +3,14 @@ import LocationReducer from './reducers/Location'
 import ProductReducer from './reducers/ListProduct'
 import ProductDetailReducer from './reducers/ProductDetail'
 import LoginReducer from './reducers/Login'
-import UserManagerReducer from './reducers/UserManager'
+import UserInfoReducer from './reducers/UserInfo'
 
 const rootReducer = combineReducers ({
     LocationReducer,
     ProductReducer,
     ProductDetailReducer,
     LoginReducer,
-    UserManagerReducer
+    UserInfoReducer,
 })
 
 export default rootReducer

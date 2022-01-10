@@ -1,5 +1,8 @@
 .product{
     margin-top: 100px;
+    .row{
+        margin-right: 0;
+    }
     &-item{
         padding-bottom: 20px;
         img{
@@ -25,4 +28,5 @@
         text-align: center;
         padding: 10px 0;
     }
+
 }

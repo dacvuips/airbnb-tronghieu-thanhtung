@@ -25,8 +25,6 @@ function Login() {
   };
 
   const onSubmit = (values) => {
-    console.log(values);
-    // dawng nhap chua lam a oi ::)
     dispatch(loginAction(values))
   };
   const formik = useFormik({

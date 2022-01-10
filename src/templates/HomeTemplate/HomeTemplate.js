@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 
 function LayoutHome(props) {
   return (
-    <div style={{width: "1600px", margin: "auto"}}>
+    <div>
       <Navbar />
       {props.children}
       <Footer />

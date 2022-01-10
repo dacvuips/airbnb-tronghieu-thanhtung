@@ -1,7 +1,7 @@
 import { createBrowserHistory } from "history";
 import PageNotFound from "pages/PageNotFound";
 import { Route, Router, Switch } from "react-router";
-import { renderCheckOut, renderRoutesAdmin, renderRoutesHome } from "Router";
+import { renderCheckOut, renderRoutesAdmin, renderRoutesHome } from "Routes";
 
 export const history = createBrowserHistory();
 function App() {

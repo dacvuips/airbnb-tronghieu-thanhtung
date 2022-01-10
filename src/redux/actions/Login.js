@@ -12,7 +12,7 @@ const loginAction = (user, history) => {
         const exp = date + TIME_EXP;
         localStorage.setItem("exp", exp);
         alert("Đăng nhập thành công");
-        console.log(result);
+
         if (result.data.user.type === "CLIENT") {
           const user = JSON.stringify(result.data);
           localStorage.setItem("USER_LOGIN", user);
@@ -48,4 +48,3 @@ const clearUser = (history) => {
 const actLoginSuccess = (data) => ({type: ActionType.POST_USER_LOGIN_SUCCESS,payload: data})
 
 export { loginAction, clearUser,actLoginSuccess };
-// actLoginSuccess(null) la ok a voi xoa may cái local di a => a dispatch null no cho nao

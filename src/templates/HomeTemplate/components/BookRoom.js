@@ -1,7 +1,7 @@
 import { DatePicker } from 'antd'
 import React, {useEffect, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import { actProdctDetail } from 'redux/actions/ProductDetail'
 import api from './../../../utils/apiUtils'
 import Rating from './Rating'
@@ -9,24 +9,25 @@ import moment from 'moment'
 
 const BookRoom = () => {
     const { productDetail } = useSelector((state) => state.ProductDetailReducer)
+    const { userLogin } = useSelector((state) => state.LoginReducer)
     const [dateCheckIn, setDateCheckIn] = useState({dateString: moment (new Date()).format('YYYY-MM-DD')})
     const [dateCheckOut, setDateCheckOut] = useState({dateString: moment (new Date()).format('YYYY-MM-DD')})
     const [totalDay, setTotalDay] = useState(0)
     const { id } = useParams()
-    const usd = '20000'
-    const fee = Number('10')
+    const history = useHistory()
     const dispatch = useDispatch()
+    const usd = 20000
+    const fee = Number('10')
 
     useEffect(() => {
         dispatch(actProdctDetail(id))
     }, [dispatch , id])
 
-    const booking = () => {
-        
+    const booking = () => {  
         const info = {
             checkId: id,
-            checkIn : dateCheckIn,
-            checkOut: dateCheckOut
+            checkIn : dateCheckIn.dateString,
+            checkOut: dateCheckOut.dateString
         }
         api.post('/api/rooms/booking', info)
         .then((result) => {
@@ -93,24 +94,24 @@ const BookRoom = () => {
             </div>
             <button onClick={booking}>Đặt phòng</button>
             <p>Bạn vẫn chưa bị trừ tiền</p>
-
-            {
-                dateCheckIn?.dateString && dateCheckOut?.dateString 
-                ?            
-                 <div className="bookRoom-price">
-                    <span>{productDetail?.price/usd}$ * {totalDay || 0} đêm</span>
-                    <span>{productDetail?.price/usd*totalDay || ''}$</span>
+            {dateCheckIn?.dateString && dateCheckOut?.dateString ? 
+            (
+                <div className="bookRoom-price">
+                <span>
+                    {productDetail?.price / usd}$ * {totalDay || 0} đêm
+                </span>
+                <span>{(productDetail?.price / usd) * totalDay || ""}$</span>
                 </div>
-                : ''
-            }
-
+            ) : (
+                "" 
+            )}
             <div className="bookRoom-fee">
                 <span>Phí dịch vụ</span>
                 <span>{fee}$</span>
             </div>
             <div className="bookRoom-total">
                 <span>Tổng</span>
-                <span>{productDetail?.price/usd*totalDay + fee}$</span>
+                <span>{(productDetail?.price/usd)*totalDay + fee}$</span>
             </div>
         </div>
     )

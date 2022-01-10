@@ -1,7 +1,7 @@
 import { Search } from '@mui/icons-material'
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import Location from './Modal/Location'
+import Location from './Location'
 
 
 const HomeTool = () => {

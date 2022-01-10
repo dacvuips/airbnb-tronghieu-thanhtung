@@ -12,7 +12,7 @@ import ListProducts from "templates/HomeTemplate/ListProducts";
 import Login from "templates/UserTemplate/Login/Login"
 import Register from "templates/UserTemplate/Register/Register";
 import UserTemplate from "templates/UserTemplate";
-
+import UserInfo from 'templates/HomeTemplate/UserInfo'
 
 const routesHome = [
   {
@@ -34,6 +34,11 @@ const routesHome = [
     exact: false,
     path: "/products",
     component: Postcards,
+  },
+  {
+    exact: false,
+    path: "/user-info",
+    component: UserInfo,
   },
   {
     exact: false,
