@@ -8,7 +8,7 @@ const Postcards = () => {
         <div className='postcard'>
             <h1>Khám phá Trải nghiệm Airbnb</h1>
             <div className="row">
-                <div className="col-6 postcard-left">
+                <div className="col-md-6 col-12 mb-4 postcard-left">
                     <div className="postcard-img">
                         <img src={postcardLeft} alt="postcard-left" />
                     </div>
@@ -19,7 +19,7 @@ const Postcards = () => {
                         </button>
                     </div>
                 </div>
-                <div className="col-6 postcard-left">
+                <div className="col-md-6 col-12 mb-4 postcard-left">
                     <div className="postcard-img">
                         <img src={postcardRight} alt="postcard-right" />
                     </div>

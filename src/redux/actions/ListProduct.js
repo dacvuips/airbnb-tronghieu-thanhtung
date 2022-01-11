@@ -1,11 +1,11 @@
 import * as ActionType from '../constants/ListProduct'
 import api from '../../utils/apiUtils'
 
-export const actProduct =  ( skip, pageSize, pageSizeCurrent) => {
+export const actProduct =  ( skip, pageSize, pageSizeCurrent, id) => {
     return (dispatch) => {
         dispatch(actProductRequest())
         api
-        .get(`api/rooms/?skip=${skip}&limit=${pageSize}`)
+        .get(!id ? `api/rooms/?skip=${skip}&limit=${pageSize}`: `/api/rooms?locationId=${id}&skip=${skip}&limit=${pageSize}`)
         .then((result) => {
             if (skip === 0 && pageSize === 0) {
                 const length = result.data.length;

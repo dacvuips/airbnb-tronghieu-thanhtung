@@ -12,9 +12,14 @@
     top: 0;
     left: 0;
     z-index: 99;
+    
+    @media(max-width: 768px) {
+        height: 100%;
+    }
 
     &.shrink {
         background-color: #fff;
+        width: 100%;
         height: 80px;
         color: #000;
         position: fixed;
@@ -26,11 +31,21 @@
                 opacity: 0.5;
             }
         }
+        @media (max-width: 768px) {
+            height: 100px;
+        }
     }
 
     &-logo{
         width: 140px;
         height: 60px;
+        @media (max-width: 768px) {
+            margin: auto;
+        }
+        @media (max-width: 480px) {
+            width: 100px;
+            height: 40px;
+        }
         img{
             width: 100%;
             height: 100%;
@@ -43,10 +58,16 @@
         display: flex;
         align-items: center;
         position: relative;
+        @media (max-width: 768px) {
+            margin: auto;
+        }
         a{
             position: relative;
             margin-right: 20px;
             color: #fff;
+            @media (max-width: 480px) {
+                font-size: 10px;
+            }
             &:hover{
                 color: #fff;
                 opacity: 0.5;
@@ -62,12 +83,16 @@
             left: 0;
             bottom: -6px;
         }
+
     }
     &-right{
         display: flex;
         justify-content: space-between;
         align-items: center;
         cursor: pointer;
+        @media (max-width: 768px) {
+            display: none;
+        }
         span{
             margin-right: 20px;
             &:hover{

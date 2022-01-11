@@ -7,7 +7,7 @@ const Footer = () => {
         <div className='footer'>
             <div className="footer-top">
                 <div className="row">
-                    <div className="col-3">
+                    <div className="col-md-3 col-12 mobile">
                         <Link to='/' className="footer-top-header">Hỗ trợ</Link>
                         <Link to='/'>Trung tâm trợ giúp</Link>
                         <Link to='/'>Các tùy chọn hủy</Link>
@@ -15,14 +15,14 @@ const Footer = () => {
                         <Link to='/'>Hỗ trợ người khuyết tật</Link>
                         <Link to='/'>Báo cáo lo ngại của hàng xóm</Link>
                     </div>
-                    <div className="col-3">
+                    <div className="col-md-3 col-12 mobile">
                         <Link to='/' className="footer-top-header">Cộng đồng</Link>
                         <Link to='/'>Nhà ở cứu trợ</Link>
                         <Link to='/'>Hỗ trợ dân tị nạn Afghanistan</Link>
                         <Link to='/'>Sự đa dạng và thân thuộc</Link>
                         <Link to='/'>Chống phân biệt đối xử</Link>
                     </div>
-                    <div className="col-3">
+                    <div className="col-md-3 col-12 mobile">
                         <Link to='/' className="footer-top-header">Đón tiếp khách</Link>
                         <Link to='/'>Thử đón tiếp khách</Link>
                         <Link to='/'>AirCover: bảo vệ cho Host</Link>
@@ -31,7 +31,7 @@ const Footer = () => {
                         <Link to='/'>Đón tiếp khách có trách nhiệm</Link>
 
                     </div>
-                    <div className="col-3">
+                    <div className="col-md-3 col-12 mobile">
                         <Link to='/' className="footer-top-header">Giới thiệu</Link>
                         <Link to='/'>Trang tin tức</Link>
                         <Link to='/'>Tìm hiểu các tính năng mới</Link>

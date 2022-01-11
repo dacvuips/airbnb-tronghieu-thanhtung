@@ -1,12 +1,12 @@
 .product{
-    margin-top: 100px;
+    padding: 50px;
     .row{
         margin-right: 0;
     }
     &-item{
         padding-bottom: 20px;
         img{
-            width: 250px;
+            width: 100%;
             height: 200px;
             border-radius: 20px;
         }

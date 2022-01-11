@@ -12,6 +12,14 @@
     cursor: pointer;
     
     position: relative;
+
+    @media (max-width: 1024px) {
+        width: 100%;
+        display: flex;
+    }
+    @media (max-width: 768px) {
+        display: none;
+    }
     &-left{
         input {
             border: none;

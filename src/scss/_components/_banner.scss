@@ -3,12 +3,25 @@
     margin-top: 30px;
     padding-bottom: 70px;
     position: relative;
+    @media (max-width: 1024px) {
+        margin-top: 0;
+    }
+    @media (max-width: 768px) {
+        margin-top: 0;
+    }
     img{
-        width: 1600px;
+        width: 100%;
         height: 700px;
         display: flex;
         margin: auto;
-        border-radius: 20px; 
+        border-radius: 20px;
+        @media (max-width: 768px) {
+            height: 600px;
+            object-fit: contain;
+        }
+        @media (max-width: 480px) {
+            height: 300px;
+        }
     }
     &-text{
         position: absolute;
@@ -20,6 +33,9 @@
         h1{
             color: #fff;
             margin-bottom: 0;
+            @media (max-width: 480px) {
+               font-size: 26px;
+            }
         }
 
         button{

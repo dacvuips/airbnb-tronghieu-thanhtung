@@ -5,11 +5,11 @@ import Navbar from "./components/Navbar";
 
 function LayoutHome(props) {
   return (
-    <div>
+    <>
       <Navbar />
       {props.children}
       <Footer />
-    </div>
+    </>
   );
 }
 
@@ -21,3 +21,4 @@ export default function HomeTemplate(props) {
     </LayoutHome>
   );
 }
+

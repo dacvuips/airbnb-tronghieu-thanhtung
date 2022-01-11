@@ -1,11 +1,26 @@
 .evaluate {
   .evaluate-rate {
     display: flex;
+    @media (max-width: 1024px) {
+      margin: 20px 0;
+      h3 {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      @media (max-width: 768px) {
+        margin: 10px 0;
+      }
+    }
     img {
       width: 30px;
       height: 30px;
       display: block;
       margin-right: 1rem;
+      @media (max-width: 1024px) {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
   .evaluate-common {
@@ -13,6 +28,9 @@
     .evaluate-common-left,
     .evaluate-common-right {
       width: 50%;
+      @media (max-width: 768px) {
+        display: none;
+      }
       & > div {
         display: flex;
         justify-content: space-between;
@@ -55,10 +73,16 @@
     display: flex;
     padding-top: 30px;
     flex-wrap: wrap;
+    @media (max-width: 768px) {
+      display: block;
+    }
     .comment-item {
       width: 50%;
       padding-right: 80px;
       margin-bottom: 40px;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
       .comment-header {
         display: flex;
         align-items: center;
