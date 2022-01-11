@@ -1,0 +1,156 @@
+<<<<<<< HEAD:src/Routes/index.js
+=======
+// import Login from "pages/Login/Login";
+// import Register from "pages/Register/Register";
+
+>>>>>>> main:src/Router/index.js
+import AdminTemplate from "templates/AdminTemplate";
+import CardManager from "templates/AdminTemplate/CardManager";
+import Dashboard from "templates/AdminTemplate/Dashboard";
+import LocalInfoManager from "templates/AdminTemplate/LocalInfoManager";
+
+import RoomInfoManager from "templates/AdminTemplate/RoomInfoManager";
+import UserManager from "templates/AdminTemplate/UserManager";
+import Footer from "templates/HomeTemplate/components/Footer";
+import DetailProduct from "templates/HomeTemplate/DetailProduct";
+import Home from "templates/HomeTemplate/Home";
+import HomeTemplate from "templates/HomeTemplate/HomeTemplate";
+<<<<<<< HEAD:src/Routes/index.js
+import Postcards from "templates/HomeTemplate/Postcards";
+import ListProducts from "templates/HomeTemplate/ListProducts";
+import Login from "templates/UserTemplate/Login/Login"
+import Register from "templates/UserTemplate/Register/Register";
+import UserTemplate from "templates/UserTemplate";
+import UserInfo from 'templates/HomeTemplate/UserInfo'
+=======
+import UserTemplate from "templates/UserTemplate";
+import AuthPage from "templates/UserTemplate/Auth/Auth";
+import RegisterPage from "templates/UserTemplate/Register";
+>>>>>>> main:src/Router/index.js
+
+const routesHome = [
+  {
+    exact: true,
+    path: "/",
+    component: Home,
+  },
+  {
+    exact: false,
+    path: "/products",
+    component: ListProducts,
+  },
+  {
+    exact: false,
+    path: "/product-detail/:id",
+    component: DetailProduct,
+  },
+  {
+    exact: false,
+    path: "/products",
+    component: Postcards,
+  },
+  {
+    exact: false,
+    path: "/user-info",
+    component: UserInfo,
+  },
+  {
+    exact: false,
+    path: "/footer",
+    component: Footer,
+  },
+
+
+];
+
+const routesAdmin = [
+  //localhost:3000/dashboard
+  {
+    exact: false,
+    path: "/admin/dashboard",
+    component: Dashboard,
+  },
+  {
+    exact: false,
+    path: "/admin/usermanager",
+    component: UserManager,
+  },
+  {
+    exact: false,
+    path: "/admin/local",
+    component: LocalInfoManager,
+  },
+  {
+    exact: false,
+    path: "/admin/room",
+    component: RoomInfoManager,
+  },
+  {
+    exact: false,
+    path: "/admin/card",
+    component: CardManager,
+  },
+];
+
+
+const checkOut = [
+<<<<<<< HEAD:src/Routes/index.js
+=======
+  // localhost:3000/dashboard
+>>>>>>> main:src/Router/index.js
+  {
+    exact: false,
+    path: "/register",
+    component: RegisterPage,
+  },
+  {
+    exact: false,
+    path: "/login",
+    component: AuthPage,
+  },
+];
+
+function renderRoutesHome() {
+  return routesHome.map((route, index) => {
+    return (
+      <HomeTemplate
+        key={index}
+        exact={route.exact}
+        path={route.path}
+        Component={route.component}
+      />
+    );
+  });
+}
+
+function renderRoutesAdmin() {
+  return routesAdmin.map((route, index) => {
+    return (
+      <AdminTemplate
+        key={index}
+        exact={route.exact}
+        path={route.path}
+        Component={route.component}
+      />
+    );
+  });
+}
+
+function renderCheckOut() {
+  return checkOut.map((route, index) => {
+    return (
+      <UserTemplate
+        key={index}
+        exact={route.exact}
+        path={route.path}
+        Component={route.component}
+      />
+    );
+  });
+}
+<<<<<<< HEAD:src/Routes/index.js
+export { renderRoutesHome, renderRoutesAdmin , renderCheckOut};
+=======
+
+export { renderRoutesHome, renderRoutesAdmin, renderCheckOut };
+>>>>>>> main:src/Router/index.js

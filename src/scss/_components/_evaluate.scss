@@ -1,0 +1,130 @@
+.evaluate {
+  .evaluate-rate {
+    display: flex;
+    @media (max-width: 1024px) {
+      margin: 20px 0;
+      h3 {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      @media (max-width: 768px) {
+        margin: 10px 0;
+      }
+    }
+    img {
+      width: 30px;
+      height: 30px;
+      display: block;
+      margin-right: 1rem;
+      @media (max-width: 1024px) {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  .evaluate-common {
+    display: flex;
+    .evaluate-common-left,
+    .evaluate-common-right {
+      width: 50%;
+      @media (max-width: 768px) {
+        display: none;
+      }
+      & > div {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        padding-right: 80px;
+        .label {
+          font-weight: 400;
+          font-size: 16px;
+        }
+        .slide {
+          display: flex;
+          align-items: center;
+          .slide-wrapper {
+            position: relative;
+            .slide-hollow {
+              width: 100px;
+              height: 4px;
+              background-color: gray;
+              border-radius: 100rem;
+            }
+            .slide-slide {
+              position: absolute;
+              height: 4px;
+              top: 0;
+              width: 40%;
+              border-radius: 100rem;
+              background-color: #333;
+            }
+          }
+
+          span {
+            width: 30px;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+  .comment {
+    display: flex;
+    padding-top: 30px;
+    flex-wrap: wrap;
+    @media (max-width: 768px) {
+      display: block;
+    }
+    .comment-item {
+      width: 50%;
+      padding-right: 80px;
+      margin-bottom: 40px;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+      .comment-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        img {
+          border-radius: 50%;
+          display: block;
+          width: 56px;
+          height: 56px;
+        }
+        & > div {
+          margin-left: 12px;
+
+          h2 {
+            font-size: 16px;
+            color: #222;
+            margin: 0;
+          }
+          p {
+            color: #717171;
+            font-size: 14px;
+            margin: 0;
+          }
+        }
+      }
+    }
+    .btn-show {
+      div {
+        border-radius: 4px;
+        border-width: 1px;
+        border-style: solid;
+        padding: 14px 24px;
+        border-color: #222;
+        background: transparent;
+        color: #222;
+        padding: 13px 23px;
+        font-weight: 700;
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

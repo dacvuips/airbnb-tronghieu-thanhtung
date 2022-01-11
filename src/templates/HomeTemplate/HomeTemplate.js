@@ -1,5 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
 function LayoutHome(props) {
@@ -7,6 +8,7 @@ function LayoutHome(props) {
     <>
       <Navbar />
       {props.children}
+      <Footer />
     </>
   );
 }
@@ -19,3 +21,4 @@ export default function HomeTemplate(props) {
     </LayoutHome>
   );
 }
+

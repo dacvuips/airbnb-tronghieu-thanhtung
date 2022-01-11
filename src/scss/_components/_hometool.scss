@@ -1,0 +1,69 @@
+.hometool{
+    width: 850px;
+    height: 70px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 40px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+    
+    position: relative;
+
+    @media (max-width: 1024px) {
+        width: 100%;
+        display: flex;
+    }
+    @media (max-width: 768px) {
+        display: none;
+    }
+    &-left{
+        input {
+            border: none;
+            outline: none;
+        }
+    }
+    &-mid{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &-from{
+            padding-left: 30px;
+        }
+    }
+
+    &-right{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &-text{
+            margin-right: 50px;
+        }
+        &-icon{
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 50%;
+
+            background-color: #de3f76;
+            color: #fff;
+        }
+    }
+
+    &-text{
+        display: block;
+        font-weight: bold;
+    }
+    &-line{
+        border-right: 1px solid #000;
+        padding-right: 70px;
+        &:last-child{
+            border-right: none;
+            padding-right: 0;
+        }
+    }
+}

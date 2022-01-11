@@ -1,0 +1,132 @@
+.profile {
+  padding: 40px 80px;
+  @media (max-width: 768px) {
+    padding: 20px 50px;
+  }
+  @media (max-width: 480px) {
+    padding: 10px 20px;
+  }
+  &-left {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    p {
+      margin-bottom: 0;
+      font-size: 16px;
+    }
+    &-img {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      img{
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          padding: 10px 0;
+      }
+
+      &-icon {
+        @media (max-width: 768px) {
+          font-size: 80px !important;
+        }
+      }
+      label {
+        cursor: pointer;
+        position: relative;
+        font-weight: bold;
+        &::before {
+            content: "";
+            width: 100%;
+            height: 1px;
+            background-color: #000;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+          }
+      }
+
+      #upload-photo {
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+      }
+
+      
+    }
+    &-policy {
+      padding: 30px;
+      border-bottom: 1px solid #ccc;
+      button {
+        padding: 8px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        background-color: #fff;
+        border-radius: 10px;
+        border: 1px solid #000;
+      }
+    }
+    &-active {
+      padding: 30px;
+      @media (max-width: 768px) {
+        padding: 20px;
+      }
+      &-check {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  &-right {
+    &-title {
+      margin-bottom: 50px;
+      @media (max-width: 768px) {
+        margin-bottom: 30px;
+      }
+
+      &-active {
+        position: relative;
+        width: 110px;
+        font-weight: bold;
+
+        &::after {
+          content: "";
+          width: 100%;
+          height: 1px;
+          background-color: #000;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
+      }
+      .user-info {
+        &-item {
+          label {
+            width: 100px;
+            @media (max-width: 768px) {
+              width: 90px;
+            }
+          }
+        }
+      }
+    }
+    &-rating {
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      @media (max-width: 768px) {
+        margin-bottom: 20px;
+      }
+    }
+    &-ratingUser {
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      padding: 40px 0;
+      font-size: 16px;
+      font-weight: bold;
+      @media (max-width: 768px) {
+        padding: 20px 0;
+      }
+    }
+  }
+}
