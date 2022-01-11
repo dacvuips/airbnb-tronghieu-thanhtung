@@ -9,9 +9,8 @@ api.interceptors.request.use((config) => {
     config.headers = {
         ...config.headers,
         tokenByClass: TOKEN_CYBERSOFT,
-        token: TOKEN,
-        // Authorization: localStorage.getItem('USER_LOGIN') ? JSON.parse(localStorage.getItem('USER_LOGIN')).token : ''
-        Authorization: localStorage.getItem('USER_LOGIN') ?   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWRjNjM0ZmZlZTJmYzAwMWNkNzBlMmIiLCJlbWFpbCI6ImNhaW5pdEBnbWFpbC5jb20iLCJ0eXBlIjoiQURNSU4iLCJpYXQiOjE2NDE4MzMzNzl9.Ynf6Zc3v_74qR2BfjPHnPTpLdFi-jOrBwOGhWnBlcXU" : ''
+        token: localStorage.getItem('USER_LOGIN') ? JSON.parse(localStorage.getItem('USER_LOGIN')).token : '',
+        Authorization: localStorage.getItem('USER_LOGIN') ? JSON.parse(localStorage.getItem('USER_LOGIN')).token : ''
     }
     return config
     },

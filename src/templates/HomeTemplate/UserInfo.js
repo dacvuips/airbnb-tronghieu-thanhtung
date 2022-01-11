@@ -17,6 +17,7 @@ import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import moment from "moment";
 const UserManager = (props) => {
   const history = useHistory();
+  const [srcImg,setSrcImg] = useState("")
   const handleChangeFile = async (e) => {
     const { name, files } = e.target;
     const file = files[0];
@@ -25,9 +26,19 @@ const UserManager = (props) => {
       await reader.readAsDataURL(file);
       const formData = new FormData();
       await formData.append("avatar", file);
+
+     
       api.post("/api/users/upload-avatar", formData).then(() => {
-        alert("Cập nhật ảnh thành công")
-        
+
+        const localTemp = {...JSON.parse(localStorage.getItem("USER_LOGIN"))}
+        api.get(`/api/users/${localTemp.user._id}`).then((result) => {
+          const avtar =result.data.avatar
+          localTemp.user.avatar = avtar
+          setSrcImg(avtar)
+          localStorage.setItem("USER_LOGIN", JSON.stringify(localTemp))
+        }).catch((error) => {
+            console.log(error)
+        })
       });
     }
   };
@@ -38,7 +49,7 @@ const UserManager = (props) => {
 
   useEffect(() => {
     if (userLogin) {
-      console.log(userLogin);
+      setSrcImg(userLogin.user.avatar || "")
       setInfoUserEdit(userLogin.user);
     }
   }, []);
@@ -96,10 +107,14 @@ const UserManager = (props) => {
   return (
     <div className="profile">
       <div className="row">
-        <div className="col-md-3 col-12">
+        <div className="col-md-5 col-12">
           <div className="profile-left">
             <div className="profile-left-img">
-              <AccountCircle className="profile-left-img-icon" style={{ fontSize: "175px" }} />
+              
+              {!srcImg ? <AccountCircle className="profile-left-img-icon" style={{ fontSize: "175px" }} />: 
+              <>
+              <img src={srcImg} alt="srcImg"/>
+              </>}
               <label for="upload-photo">Cập nhật ảnh</label>
               <input onChange={handleChangeFile} type="file" name="photo" id="upload-photo" />
             </div>
