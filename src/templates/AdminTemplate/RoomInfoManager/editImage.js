@@ -2,11 +2,11 @@ import { useFormik } from "formik";
 
 import React, { useState } from "react";
 import { Form, Input } from "antd";
-import { UpdateLocalImage } from "redux/actions/LocalManagaAction";
 
 import { useDispatch } from "react-redux";
+import { UpdateRoomImage } from "redux/actions/RoomManagerAction";
 
-export default function EditImage(props) {
+export default function EditImageRoom(props) {
   const [img, setimg] = useState("");
   const dispatch = useDispatch();
 
@@ -19,13 +19,12 @@ export default function EditImage(props) {
   const onSubmit = (values) => {
     console.log(values);
 
-    console.log(props.local._id);
+    console.log(props.image._id);
     console.log(values.image.name);
-    let imageData = new FormData();
-
-    imageData.append("File", values.image, values.image.name);
-    dispatch(UpdateLocalImage(props.local._id, imageData));
-    console.log(imageData.get("File"));
+    let formData = new FormData();
+    formData.append("File", values.image, values.image.name);
+    dispatch(UpdateRoomImage(props.image._id, formData));
+    console.log(formData.get("File"));
   };
   const handleChangeFile = (e) => {
     let file = e.target.files[0];
@@ -41,6 +40,7 @@ export default function EditImage(props) {
         setimg(e.target.result);
       };
     }
+    // lưu data vào formik
     formik.setFieldValue("image", file);
   };
   const formik = useFormik({
@@ -53,7 +53,7 @@ export default function EditImage(props) {
     <>
       <div
         className="modal fade"
-        id="exampleModalImage"
+        id="EditImageRoom"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
@@ -84,7 +84,7 @@ export default function EditImage(props) {
                 <div className="form-group mt-3">
                   <img
                     className=" mb-3"
-                    src={props.local.image}
+                    src={props.image.image}
                     style={{ width: "100%", height: "100%" }}
                     alt="Ảnh"
                   />

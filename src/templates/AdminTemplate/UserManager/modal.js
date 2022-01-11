@@ -51,7 +51,6 @@ export default function ModalID(props) {
     onSubmit,
     validationSchema,
   });
-
   return (
     <>
       <div
@@ -133,7 +132,7 @@ export default function ModalID(props) {
                       name="birthday"
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      value={moment(formik.values.birthday, "YYYY/MM/DD")}
+                      value={moment(formik?.values?.birthday, "YYYY/MM/DD")}
                     />
 
                     {formik.touched.birthday && formik.errors.birthday ? (

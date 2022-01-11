@@ -4,12 +4,10 @@ import React from "react";
 import { Form, Input } from "antd";
 
 import { useDispatch } from "react-redux";
-import { UpdateLocalAction } from "redux/actions/LocalManagaAction";
+import { addLocalAction } from "redux/actions/LocalManagaAction";
 
-export default function ModalLocalID(props) {
+export default function ModalAddLocal(props) {
   const dispatch = useDispatch();
-  const local = props.local;
-  const update = props.update.update;
 
   const validationSchema = Yup.object({
     name: Yup.string().required("Không được để trống"),
@@ -19,17 +17,15 @@ export default function ModalLocalID(props) {
   });
 
   const initialValues = {
-    name: local.name,
-    province: local.province,
-
-    country: local.country,
-    valueate: local.valueate,
+    name: "",
+    province: "",
+    country: "",
+    valueate: "",
   };
 
   const onSubmit = (values) => {
     console.log(values);
-    console.log(values);
-    dispatch(UpdateLocalAction(local._id, values));
+    dispatch(addLocalAction(values));
   };
   const formik = useFormik({
     enableReinitialize: true,
@@ -42,15 +38,15 @@ export default function ModalLocalID(props) {
     <>
       <div
         className="modal fade"
-        id="exampleModal"
-        aria-labelledby="exampleModalLabel"
+        id="exampleModal1"
+        aria-labelledby="exampleModalLabel1"
         aria-hidden="true"
       >
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">
-                Địa điểm
+                Thêm địa điểm
               </h5>
               <button
                 type="button"
@@ -72,7 +68,6 @@ export default function ModalLocalID(props) {
                       name="name"
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      value={formik.values.name}
                     />
 
                     {formik.touched.name && formik.errors.name ? (
@@ -90,7 +85,6 @@ export default function ModalLocalID(props) {
                       name="province"
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      value={formik.values.province}
                     />
                     {formik.touched.province && formik.errors.province ? (
                       <div className="text-danger">
@@ -108,7 +102,6 @@ export default function ModalLocalID(props) {
                       name="country"
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      value={formik.values.country}
                     />
                     {formik.touched.country && formik.errors.country ? (
                       <div className="text-danger">{formik.errors.country}</div>
@@ -124,7 +117,6 @@ export default function ModalLocalID(props) {
                       name="valueate"
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      value={formik.values.valueate}
                     />
 
                     {formik.touched.valueate && formik.errors.valueate ? (
@@ -134,11 +126,10 @@ export default function ModalLocalID(props) {
                     ) : null}
                   </Form.Item>
                 </div>
-                {update ? (
-                  <button type="submit" className="btn btn-success pr-auto">
-                    Cập Nhật
-                  </button>
-                ) : null}
+
+                <button type="submit" className="btn btn-success pr-auto">
+                  Cập Nhật
+                </button>
               </form>
             </div>
             <div className="modal-footer">

@@ -25,7 +25,6 @@ const getUserIDAction = (id) => {
     api
       .get(`/api/users/${id}`)
       .then((result) => {
-        console.log(result.data);
         dispatch({
           type: GET_USER_ID_REQUEST,
           userID: result.data,
@@ -41,7 +40,7 @@ const updateUserAction = (id, user) => {
     api
       .put(`/api/users/${id}`, user)
       .then((result) => {
-        console.log(result.data);
+        dispatch(getUserManagerAction);
         alert("Cập nhật người dùng thành công");
       })
       .catch((err) => {

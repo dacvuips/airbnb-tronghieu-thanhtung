@@ -2,8 +2,10 @@
 // import Register from "pages/Register/Register";
 
 import AdminTemplate from "templates/AdminTemplate";
+import CardManager from "templates/AdminTemplate/CardManager";
 import Dashboard from "templates/AdminTemplate/Dashboard";
 import LocalInfoManager from "templates/AdminTemplate/LocalInfoManager";
+
 import RoomInfoManager from "templates/AdminTemplate/RoomInfoManager";
 import UserManager from "templates/AdminTemplate/UserManager";
 import Home from "templates/HomeTemplate/Home";
@@ -47,6 +49,11 @@ const routesAdmin = [
     exact: false,
     path: "/admin/room",
     component: RoomInfoManager,
+  },
+  {
+    exact: false,
+    path: "/admin/card",
+    component: CardManager,
   },
 ];
 

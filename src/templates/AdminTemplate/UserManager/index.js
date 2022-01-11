@@ -31,10 +31,12 @@ export default function UserManager(props) {
     {
       title: "Name",
       dataIndex: "name",
+      width: 50,
     },
 
     {
       title: "Avatar",
+      width: 50,
 
       dataIndex: "avatar",
       defaultSortOrder: "descend",
@@ -57,16 +59,19 @@ export default function UserManager(props) {
     {
       title: "Address",
       dataIndex: "address",
+      width: 50,
 
       onFilter: (value, record) => record.address.indexOf(value) === 0,
     },
     {
       title: "Email",
       dataIndex: "email",
+      width: 100,
     },
     {
       title: "Action",
       dataIndex: "_id",
+
       render: (text, user) => {
         return (
           <>
@@ -132,6 +137,7 @@ export default function UserManager(props) {
         columns={columns}
         dataSource={data}
         onChange={onChange}
+        scroll={{ x: "100%" }}
       />
       <ModalID user={userID} update={update} />
       <ModalAddAdmin />

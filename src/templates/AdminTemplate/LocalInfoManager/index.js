@@ -7,26 +7,47 @@ import {
   deleteLocalAction,
   getLocalAction,
   getLocalIDAction,
+  getLocalRateAction,
 } from "redux/actions/LocalManagaAction";
 import ModalAddLocal from "./modalAddLocal";
 import EditImage from "./editImage";
 const { Search } = Input;
 export default function LocalInfoManager(props) {
-  const { local, localID } = useSelector((state) => state.LocalManagerReducer);
-
   const dispatch = useDispatch();
 
+  const { local, localID } = useSelector((state) => state.LocalManagerReducer);
+
+  const [localState, setlocalState] = useState([local]);
+
   useEffect(() => {
-    async function fechData() {
+    if (local.length === 0) {
       dispatch(getLocalAction());
     }
-    fechData();
-  });
+    setlocalState({
+      localState: local,
+    });
+  }, [local]);
 
   const [update, setupdate] = useState({
     update: null,
   });
 
+  useEffect(() => {
+    async function fechData() {
+      dispatch(getLocalAction());
+    }
+
+    fechData();
+  }, []);
+
+  const handleSearch = async (e) => {
+    console.log(e.target.value);
+    dispatch(getLocalRateAction(e.target.value));
+  };
+
+  // const  = async (value) => {
+
+  // };
   const columns = [
     {
       title: "Tên",
@@ -104,7 +125,7 @@ export default function LocalInfoManager(props) {
     },
   ];
 
-  const data = local;
+  const data = localState?.localState;
   function onChange(pagination, filters, sorter, extra) {
     console.log("params", pagination, filters, sorter, extra);
   }
@@ -119,16 +140,20 @@ export default function LocalInfoManager(props) {
       >
         Thêm địa điểm
       </button>
+      <h3>Tìm địa điểm theo đánh giá từ 1-10</h3>
       <Search
         className="mb-3 w-100"
         placeholder="Nhập vào tài khoản hoặc họ tên người dùng"
         style={{ width: 200 }}
+        onChange={handleSearch}
+        // onSearch={onSearch}
       />
       <Table
         rowKey={"_id"}
         columns={columns}
         dataSource={data}
         onChange={onChange}
+        scroll={{ x: "50%" }}
       />
       <ModalLocalID local={localID} update={update} />
       <ModalAddLocal />

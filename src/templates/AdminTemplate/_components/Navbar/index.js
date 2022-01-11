@@ -89,6 +89,16 @@ class Navbar extends Component {
               </NavLink>
             </Menu.Item>
 
+            <Menu.Item key="7" icon={<UserAddOutlined />}>
+              <NavLink
+                activeClassName="active"
+                className="nav-link"
+                to="/admin/card"
+              >
+                <span>Quản lý vé</span>
+              </NavLink>
+            </Menu.Item>
+
             <Menu.Item key="6" icon={<LogoutOutlined />}>
               <button
                 className="btn btn-danger w-100 "
