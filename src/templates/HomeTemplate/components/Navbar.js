@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import logo from "./../../../assets/logo.png";
@@ -115,38 +114,8 @@ const Navbar = () => {
           )}
         </div>
       </div>
-=======
-import React from "react";
-import { useEffect } from "react";
-import api from "../../../util/apiUtils";
-import logo from "./../../../assets/logo.png";
-
-const Navbar = () => {
-  useEffect(() => {
-    async function fetchData() {
-      api
-        .get("/api/locations")
-        .then((resul) => {
-          console.log(resul);
-        })
-        .catch(); // anh luuw file lại giúp e với
-    }
-    fetchData();
-  }, []);
-  return (
-    <div className="navbar">
-      <div className="navbar-logo">
-        <img src={logo} alt="logo" />
-      </div>
-      <div className="navbar-menu">Menu</div>
-      <div className="navbar-right">Right</div>
->>>>>>> main
     </div>
   );
 };
 
-<<<<<<< HEAD
 export default Navbar;
-=======
-export default Navbar; // a dang di lam ma
->>>>>>> main

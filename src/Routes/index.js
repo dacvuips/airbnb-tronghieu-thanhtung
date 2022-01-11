@@ -1,9 +1,3 @@
-<<<<<<< HEAD:src/Routes/index.js
-=======
-// import Login from "pages/Login/Login";
-// import Register from "pages/Register/Register";
-
->>>>>>> main:src/Router/index.js
 import AdminTemplate from "templates/AdminTemplate";
 import CardManager from "templates/AdminTemplate/CardManager";
 import Dashboard from "templates/AdminTemplate/Dashboard";
@@ -15,18 +9,15 @@ import Footer from "templates/HomeTemplate/components/Footer";
 import DetailProduct from "templates/HomeTemplate/DetailProduct";
 import Home from "templates/HomeTemplate/Home";
 import HomeTemplate from "templates/HomeTemplate/HomeTemplate";
-<<<<<<< HEAD:src/Routes/index.js
+
 import Postcards from "templates/HomeTemplate/Postcards";
 import ListProducts from "templates/HomeTemplate/ListProducts";
-import Login from "templates/UserTemplate/Login/Login"
-import Register from "templates/UserTemplate/Register/Register";
+
 import UserTemplate from "templates/UserTemplate";
-import UserInfo from 'templates/HomeTemplate/UserInfo'
-=======
-import UserTemplate from "templates/UserTemplate";
+import UserInfo from "templates/HomeTemplate/UserInfo";
+
 import AuthPage from "templates/UserTemplate/Auth/Auth";
 import RegisterPage from "templates/UserTemplate/Register";
->>>>>>> main:src/Router/index.js
 
 const routesHome = [
   {
@@ -59,8 +50,6 @@ const routesHome = [
     path: "/footer",
     component: Footer,
   },
-
-
 ];
 
 const routesAdmin = [
@@ -92,12 +81,7 @@ const routesAdmin = [
   },
 ];
 
-
 const checkOut = [
-<<<<<<< HEAD:src/Routes/index.js
-=======
-  // localhost:3000/dashboard
->>>>>>> main:src/Router/index.js
   {
     exact: false,
     path: "/register",
@@ -148,9 +132,5 @@ function renderCheckOut() {
     );
   });
 }
-<<<<<<< HEAD:src/Routes/index.js
-export { renderRoutesHome, renderRoutesAdmin , renderCheckOut};
-=======
 
 export { renderRoutesHome, renderRoutesAdmin, renderCheckOut };
->>>>>>> main:src/Router/index.js
