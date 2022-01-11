@@ -30,7 +30,7 @@ const DetailProduct = () => {
   const dispatch = useDispatch();
   const usd = "20000";
   const errorLocation = "Việt Nam";
-  console.log(comment);
+
   useEffect(() => {
     dispatch(actProdctDetail(id));
     dispatch(actCommentProductDetail(id));

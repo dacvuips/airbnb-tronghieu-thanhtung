@@ -1,4 +1,4 @@
-import api from "util/apiUtils";
+import api from "../../util/apiUtils";
 const TIME_EXP = 3600000;
 export const registerAction = (user, props) => {
   return (dispatch) => {

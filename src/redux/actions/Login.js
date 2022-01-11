@@ -1,6 +1,6 @@
-import api from "utils/apiUtils";
+import api from "../../util/apiUtils";
 import { USER_LOGOUT } from "./../constants/Login";
-import * as ActionType from "../constants/Login"
+import * as ActionType from "../constants/Login";
 
 const TIME_EXP = 3600000;
 const loginAction = (user, history) => {
@@ -16,7 +16,7 @@ const loginAction = (user, history) => {
         if (result.data.user.type === "CLIENT") {
           const user = JSON.stringify(result.data);
           localStorage.setItem("USER_LOGIN", user);
-          dispatch(actLoginSuccess(result))
+          dispatch(actLoginSuccess(result));
           history.goBack();
         }
         if (result.data.user.type === "ADMIN") {
@@ -24,7 +24,7 @@ const loginAction = (user, history) => {
           localStorage.setItem("USER_ADMIN", user);
           localStorage.setItem("USER_LOGIN", user);
           localStorage.setItem("token", JSON.stringify(result.data.token));
-          dispatch(actLoginSuccess(result))
+          dispatch(actLoginSuccess(result));
 
           history.replace("/admin/dashboard");
         }
@@ -45,6 +45,9 @@ const clearUser = (history) => {
   };
 };
 
-const actLoginSuccess = (data) => ({type: ActionType.POST_USER_LOGIN_SUCCESS,payload: data})
+const actLoginSuccess = (data) => ({
+  type: ActionType.POST_USER_LOGIN_SUCCESS,
+  payload: data,
+});
 
-export { loginAction, clearUser,actLoginSuccess };
+export { loginAction, clearUser, actLoginSuccess };

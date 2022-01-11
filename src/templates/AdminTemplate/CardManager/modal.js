@@ -1,11 +1,8 @@
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import React, { useCallback, useEffect, useState } from "react";
-import { Form, Input, Switch } from "antd";
+import React, { useState } from "react";
 
 import { Tabs } from "antd";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getCardIdAction } from "redux/actions/CardAction";
 import ShowRoom from "./ShowRoom";
 
@@ -14,9 +11,6 @@ const { TabPane } = Tabs;
 export default function CardModal(props) {
   const [state, setState] = useState({
     tabPosition: "left",
-  });
-  const [showroom, setshowroom] = useState({
-    showroom: "",
   });
 
   const changeTabPosition = (e) => {

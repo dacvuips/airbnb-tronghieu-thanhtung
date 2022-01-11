@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Table, Input } from "antd";
+import { Table } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import AddRoom from "./addRoom";
 // import ModalLocalID from "./modal";
 // import ModalAddAdmin from "./modalAddAdmin";
-import {
-  deleteLocalAction,
-  getLocalIDAction,
-} from "redux/actions/LocalManagaAction";
+
 import {
   deleteRoomAction,
   getRoomAction,

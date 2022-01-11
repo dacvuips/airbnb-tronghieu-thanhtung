@@ -1,5 +1,4 @@
 import {
-  GET_CARDID_REQUES,
   GET_CARDROOM_REQUES,
   GET_CARD_REQUES,
 } from "redux/types/CardManagerType";

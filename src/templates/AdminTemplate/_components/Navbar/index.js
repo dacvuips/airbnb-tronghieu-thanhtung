@@ -39,7 +39,7 @@ class Navbar extends Component {
               </NavLink>
             </Menu.Item>
             <div className="btn btn-outline-warning w-100">
-              {user1.user.name}
+              {user1?.user?.name}
             </div>
             <Menu.Item key="2" icon={<AppstoreOutlined />}>
               <NavLink

@@ -4,15 +4,7 @@ import PageNotFound from "pages/PageNotFound";
 import { Route, Router, Switch } from "react-router";
 import { renderCheckOut, renderRoutesAdmin, renderRoutesHome } from "Routes";
 
-// import Home from "pages/Home/Home";
-// import Login from "pages/Login/Login";
-
-// import Register from "pages/Register/Register";
-
-// import { HomeTemplate } from "templates/HomeTemplate/HomeTemplate";
 import "./App.scss";
-
-import { HomeTemplate } from "templates/HomeTemplate/HomeTemplate";
 
 export const history = createBrowserHistory();
 function App() {
