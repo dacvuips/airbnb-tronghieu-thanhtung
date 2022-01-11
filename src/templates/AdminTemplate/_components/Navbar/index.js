@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import {
-  NavLink,
-  //  withRouter
-} from "react-router-dom";
+
+import { NavLink, withRouter } from "react-router-dom";
 // import { actLogout } from "./../../AuthPage/modules/actions";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 import {
   AppstoreOutlined,
   UserAddOutlined,
@@ -13,6 +11,8 @@ import {
   VideoCameraOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
+import { clearUser } from "redux/actions/LoginAction";
+const user1 = JSON.parse(localStorage.getItem("USER_ADMIN"));
 
 const { Sider } = Layout;
 class Navbar extends Component {
@@ -32,17 +32,20 @@ class Navbar extends Component {
           onCollapse={(collapsed, type) => {}}
         >
           <div className="logo mt-2"></div>
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={["4"]}>
-            <Menu.Item>
+          <Menu theme="dark" mode="inline">
+            <Menu.Item key="1">
               <NavLink className="btn" to="/">
                 <span>Home</span>
               </NavLink>
             </Menu.Item>
-            <Menu.Item key="1" icon={<AppstoreOutlined />}>
+            <div className="btn btn-outline-warning w-100">
+              {user1.user.name}
+            </div>
+            <Menu.Item key="2" icon={<AppstoreOutlined />}>
               <NavLink
                 activeClassName="active"
                 className="nav-link"
-                to="/dashboard"
+                to="/admin/dashboard"
               >
                 <span>Dashboard</span>
               </NavLink>
@@ -58,31 +61,45 @@ class Navbar extends Component {
             </Menu.Item> */}
 
             <Menu.Item key="3" icon={<VideoCameraOutlined />}>
-              <NavLink activeClassName="active" className="nav-link" to="/room">
-                <span>Thông tin phòng</span>
-              </NavLink>
-            </Menu.Item>
-            <Menu.Item key="6" icon={<VideoCameraAddOutlined />}>
               <NavLink
                 activeClassName="active"
                 className="nav-link"
-                to="/local"
+                to="/admin/room"
+              >
+                <span>Thông tin phòng</span>
+              </NavLink>
+            </Menu.Item>
+            <Menu.Item key="4" icon={<VideoCameraAddOutlined />}>
+              <NavLink
+                activeClassName="active"
+                className="nav-link"
+                to="/admin/local"
               >
                 <span>Thông tin địa điểm</span>
               </NavLink>
             </Menu.Item>
 
-            <Menu.Item key="11" icon={<UserAddOutlined />}>
+            <Menu.Item key="5" icon={<UserAddOutlined />}>
               <NavLink
                 activeClassName="active"
                 className="nav-link"
-                to="/usermanager"
+                to="/admin/usermanager"
               >
                 <span>Người dùng</span>
               </NavLink>
             </Menu.Item>
 
-            <Menu.Item key="5" icon={<LogoutOutlined />}>
+            <Menu.Item key="7" icon={<UserAddOutlined />}>
+              <NavLink
+                activeClassName="active"
+                className="nav-link"
+                to="/admin/card"
+              >
+                <span>Quản lý vé</span>
+              </NavLink>
+            </Menu.Item>
+
+            <Menu.Item key="6" icon={<LogoutOutlined />}>
               <button
                 className="btn btn-danger w-100 "
                 onClick={() => {
@@ -148,15 +165,14 @@ class Navbar extends Component {
   }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     logout: (history) => {
-//       dispatch(actLogout(history));
-//     },
-//   };
-// };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logout: (history) => {
+      dispatch(clearUser(history));
+    },
+  };
+};
 
-// const ConnectedComponent = connect(null, mapDispatchToProps)(Navbar);
+const ConnectedComponent = connect(null, mapDispatchToProps)(Navbar);
 
-// export default withRouter(ConnectedComponent);
-export default Navbar;
+export default withRouter(ConnectedComponent);

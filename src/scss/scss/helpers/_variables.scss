@@ -1,0 +1,79 @@
+$textWhite: #fff;
+$textBlur: #ffffff80;
+$bgBlack: #000;
+$border-color: #333333ff;
+$bg-color: #111111ff;
+$bg: #111;
+$textDecs: #9b9b9bff;
+$bg-quickdetail: rgb(29, 29, 29);
+
+// color
+$color-1: #0a0a0a;
+$color-2: #ffffff80;
+$color-3: #ffffff;
+$color-4: #111111ff;
+$border-bottom-color: #ffffff1a;
+$color-5: #da9e1cff;
+$color-6: #ffffff4d;
+$color-7: #9b9b9bff;
+$color-8: #3ac882;
+
+// font weight
+$fw-1: 400;
+$fw-2: 700;
+
+// line height
+$lh-1: 1.5;
+
+// padding
+$pd-1: 28px;
+$pd-2: 8px;
+$pd-3: 20px;
+
+// margin
+$mg-1: 84px;
+$mg-2: 16px;
+$mg-3: 8px;
+$mg-4: 4px;
+$mg-5: 20px;
+$mg-6: 12px;
+$mg-7: 40px;
+$mg-8: 8px;
+$mg-9: 10px;
+$mg-10: 24px;
+$mg-11: 2px;
+
+// font size
+$fs-1: 16px;
+$fs-2: 14px;
+$fs-3: 12px;
+$fs-4: 24px;
+$fs-5: 28px;
+$fs-6: 15px;
+$fs-7: 13px;
+
+// images size
+$img-w: 288px;
+$img-h: 90px;
+$img-w-2: 50px;
+$img-h-2: 50px;
+$img-w-3: 98px;
+$img-w-4: 120px;
+$img-w-5: 106px;
+$img-w-6: 114px;
+
+// progress bar
+$pg-w: 280px;
+$pg-h: 3px;
+
+//break points
+$breakpoints: (
+  "extra-large": 1200px,
+  "large": 992px,
+  "medium": 768px,
+  "small": 576px,
+  "extra-large-down": 1199.98px,
+  "large-down": 991.98px,
+  "medium-down": 767.98px,
+  "small-down": 575.98px,
+);
