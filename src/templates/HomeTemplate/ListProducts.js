@@ -23,7 +23,7 @@ const ListProducts = (props) => {
     }else {
         dispatch(actProduct(0, 0, pageSize, id))
     }
-    }, [dispatch]) 
+    }, [dispatch, id ]) 
     
     if (listProduct?.length > 0) {
         return (

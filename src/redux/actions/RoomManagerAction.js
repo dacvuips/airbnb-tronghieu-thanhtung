@@ -1,8 +1,8 @@
 import {
   GET_ROOMID_REQUES,
   GET_ROOM_REQUES,
-} from "redux/types/RoomManagerType";
-import api from "../../util/apiUtils";
+} from "./../../redux/constants/RoomManagerType";
+import api from "../../utils/apiUtils";
 
 const getRoomAction = () => {
   return async (dispatch) => {

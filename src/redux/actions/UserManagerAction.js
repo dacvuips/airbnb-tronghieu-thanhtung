@@ -1,9 +1,9 @@
 import {
   GET_USER_ID_REQUEST,
   GET_USER_REQUEST,
-} from "redux/types/UserManagerType";
+} from "./../../redux/constants/UserManagerType";
 
-import api from "../../util/apiUtils";
+import api from "../../utils/apiUtils";
 const getUserManagerAction = () => {
   return async (dispatch) => {
     api

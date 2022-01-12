@@ -2,7 +2,7 @@ import {
   GET_LOCALID_REQUES,
   GET_LOCAL_RATE,
   GET_LOCAL_REQUES,
-} from "redux/types/LocalManagerType";
+} from "./../constants/LocalManagerType";
 
 const localState = {
   local: [],

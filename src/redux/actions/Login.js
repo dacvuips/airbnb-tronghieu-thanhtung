@@ -5,6 +5,7 @@ import * as ActionType from "../constants/Login"
 const TIME_EXP = 3600000;
 const loginAction = (user, history) => {
   return (dispatch) => {
+    console.log("run")
     api
       .post(`/api/auth/login`, user)
       .then((result) => {
@@ -17,7 +18,8 @@ const loginAction = (user, history) => {
           const user = JSON.stringify(result.data);
           localStorage.setItem("USER_LOGIN", user);
           dispatch(actLoginSuccess(result))
-          history.goBack();
+          history.replace("/");
+          
         }
         if (result.data.user.type === "ADMIN") {
           const user = JSON.stringify(result.data);
@@ -25,7 +27,7 @@ const loginAction = (user, history) => {
           localStorage.setItem("USER_LOGIN", user);
           localStorage.setItem("token", JSON.stringify(result.data.token));
           dispatch(actLoginSuccess(result))
-
+          
           history.replace("/admin/dashboard");
         }
       })

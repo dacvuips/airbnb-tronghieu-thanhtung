@@ -3,7 +3,6 @@ import { DatePicker } from "antd";
 import { Radio } from "antd";
 import React, { useState, useEffect } from "react";
 import api from "utils/apiUtils";
-import * as Yup from "yup";
 import {
   AccountCircle,
   Check,
@@ -13,9 +12,8 @@ import {
 import { useHistory } from "react-router-dom";
 import { useFormik } from "formik";
 import { Input, Space } from "antd";
-import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import moment from "moment";
-const UserManager = (props) => {
+const UserManager = () => {
   const history = useHistory();
   const [srcImg,setSrcImg] = useState("")
   const handleChangeFile = async (e) => {
@@ -52,25 +50,7 @@ const UserManager = (props) => {
       setSrcImg(userLogin.user.avatar || "")
       setInfoUserEdit(userLogin.user);
     }
-  }, []);
-
-  const validationSchema = Yup.object({
-    name: Yup.string()
-      .required("Không được để trống")
-      .min(5, "Độ dài trên 5 ký tự ")
-      .max(30, "Tên quá dài, dưới 30 ký tự "),
-    email: Yup.string()
-      .required("Không được để trống")
-      .matches(
-        /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-        "Email không hợp lệ"
-      ),
-    phone: Yup.string()
-      .required("Không được để trống")
-      .length(9, "10 số điện thoại"),
-    birthday: Yup.string().required("Không được để trống"),
-    address: Yup.string().required("Không được để trống"),
-  });
+  }, [userLogin]);
 
   const formik = useFormik({
     enableReinitialize: true,
@@ -140,7 +120,7 @@ const UserManager = (props) => {
         <div className="col-md-6 col-12">
           <div className="profile-right">
             <div className="profile-right-title">
-              <h3>Xin chào, tôi là Tùng</h3>
+              <h3>Xin chào, tôi là {userLogin?.user.name}</h3>
               <p>Bắt đầu tham gia 2021</p>
               <p className="profile-right-title-active">Chỉnh sửa hồ sơ</p>
               <form>

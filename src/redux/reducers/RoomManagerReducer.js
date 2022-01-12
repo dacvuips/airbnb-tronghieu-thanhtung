@@ -1,7 +1,7 @@
 import {
   GET_ROOMID_REQUES,
   GET_ROOM_REQUES,
-} from "redux/types/RoomManagerType";
+} from "./../constants/RoomManagerType";
 
 const localState = {
   room: [],

@@ -21,7 +21,7 @@ export default function UserManager(props) {
       dispatch(getUserManagerAction());
     }
     fechData();
-  }, []);
+  }, [dispatch]);
 
   const [update, setupdate] = useState({
     update: null,

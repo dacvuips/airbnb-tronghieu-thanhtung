@@ -1,8 +1,8 @@
-import api from "../../util/apiUtils";
+import api from "../../utils/apiUtils";
 import {
   GET_LOCALID_REQUES,
   GET_LOCAL_REQUES,
-} from "redux/types/LocalManagerType";
+} from "./../../redux/constants/LocalManagerType";
 const getLocalAction = () => {
   return async (dispatch) => {
     api

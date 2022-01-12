@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { actProdctDetail } from "redux/actions/ProductDetail";
-import api from "./../../../utils/apiUtils";
+import api from "../../../utils/apiUtils"
 import Rating from "./Rating";
 
 const BookRoom = () => {
@@ -49,10 +49,10 @@ const BookRoom = () => {
     if (userLogin) {
       if (dateCheckIn?.dateString && dateCheckOut?.dateString) {
         const info = {
-          checkId: id,
-          checkIn: dateCheckIn.dateString,
-          checkOut: dateCheckOut.dateString,
-        };
+          "roomId" : "6166562edc423b001dd9c0cf", 
+          "checkIn": "2021-05-11T17:00:00.000+00:00", 
+          "checkOut": "2021-05-15T17:00:00.000+00:00"
+      };
         api
           .post("/api/rooms/booking", info)
           .then((result) => {

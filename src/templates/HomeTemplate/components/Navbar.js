@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 import React, { useRef, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "./../../../assets/logo.png";
 import { AccountCircle, Dehaze, FilterTiltShift } from "@mui/icons-material";
 import { useEffect } from "react";
@@ -81,7 +80,7 @@ const Navbar = () => {
               {userLogin ? (
                 <>
                   <p className="login__forgot-text">
-                    <Link to="/user-info"> - Thông tin cá nhân -</Link>
+                    <Link to="/user-info">Thông tin cá nhân</Link>
                   </p>
                   <p
                     className="login__forgot-text"
@@ -90,63 +89,32 @@ const Navbar = () => {
                       localStorage.clear();
                     }}
                   >
-                    <Link to="#"> - Đăng xuất -</Link>
+                    <Link to="#">Đăng xuất</Link>
                   </p>
                 </>
               ) : (
                 <>
-                  <NavLink
+                  <Link
                     activeClassName="active"
                     className="nav-link header--nav-link"
                     to="/register"
                   >
                     Đăng kí
-                  </NavLink>
-                  <NavLink
+                  </Link>
+                  <Link
                     activeClassName="active"
                     className="nav-link header--nav-link"
                     to="/login"
                   >
                     Đăng nhập
-                  </NavLink>
+                  </Link>
                 </>
               )}
             </div>
           )}
         </div>
       </div>
-=======
-import React from "react";
-import { useEffect } from "react";
-import api from "../../../util/apiUtils";
-import logo from "./../../../assets/logo.png";
-
-const Navbar = () => {
-  useEffect(() => {
-    async function fetchData() {
-      api
-        .get("/api/locations")
-        .then((resul) => {
-          console.log(resul);
-        })
-        .catch(); // anh luuw file lại giúp e với
-    }
-    fetchData();
-  }, []);
-  return (
-    <div className="navbar">
-      <div className="navbar-logo">
-        <img src={logo} alt="logo" />
-      </div>
-      <div className="navbar-menu">Menu</div>
-      <div className="navbar-right">Right</div>
->>>>>>> main
     </div>
-  );
-};
+)}
 
-<<<<<<< HEAD
-export default Navbar;
-=======
-export default Navbar; // a dang di lam ma
->>>>>>> main
+export default Navbar

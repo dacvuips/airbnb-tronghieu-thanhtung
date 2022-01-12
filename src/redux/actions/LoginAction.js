@@ -1,5 +1,5 @@
-import { USER_LOGOUT } from "redux/types/LoginType";
-import api from "../../util/apiUtils";
+import { USER_LOGOUT } from "../constants/LoginType";
+import api from "../../utils/apiUtils";
 
 const TIME_EXP = 3600000;
 const loginAction = (user, history) => {

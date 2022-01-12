@@ -12,11 +12,13 @@ import {
 } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import { clearUser } from "redux/actions/LoginAction";
-const user1 = JSON.parse(localStorage.getItem("USER_ADMIN"));
+
 
 const { Sider } = Layout;
 class Navbar extends Component {
+
   render() {
+    const user1 = JSON.parse(localStorage.getItem("USER_ADMIN"));
     return (
       <>
         <Sider

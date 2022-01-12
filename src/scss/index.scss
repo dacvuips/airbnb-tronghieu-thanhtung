@@ -1,3 +1,6 @@
+@import "./helpers/variables";
+@import "./helpers/mixin";
+@import "./base/grid";
 @import './_components/navbar';
 @import './_components/hometool';
 @import './_components/banner';
@@ -10,3 +13,5 @@
 @import './_components/evaluate';
 @import './_components/userinfo';
 @import './_components/footer';
+@import "./_components/login";
+@import "./_components/admin";

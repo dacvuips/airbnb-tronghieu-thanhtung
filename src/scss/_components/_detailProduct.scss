@@ -1,5 +1,6 @@
 .detailProduct{
     padding: 50px 20px;
+    
     @media(max-width: 1024px) {
         padding: 30px 20px;
     }
@@ -107,7 +108,9 @@
 
     }
     &-desc{
-        padding-top: 40px;
+        padding: 40px 0;
+        display: flex;
+        justify-content: space-around;
         &-header{
             display: flex;
             justify-content: space-between;

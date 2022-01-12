@@ -1,7 +1,7 @@
 import {
   GET_USER_REQUEST,
   GET_USER_ID_REQUEST,
-} from "redux/types/UserManagerType";
+} from "./../constants/UserManagerType";
 
 const stateDefault = {
   userData: [],
